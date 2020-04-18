@@ -13,7 +13,7 @@ class DefaultController extends Controller {
 
 	public function recipe($name) {
 	    $categories = DB::table('recipe')->select('category')->groupBy('category')->get();
-        $recipes = DB::table('recipe')->where('name','LIKE','%'.$name."%")->get();
+        $recipes = DB::table('recipe')->where('name','LIKE','%'.$name."%")->paginate(24);
 		return view('index', compact('categories','recipes'));
     }
 

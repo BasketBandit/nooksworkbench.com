@@ -24,16 +24,12 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-163890400-1');
     </script>
 </head>
 
 <body>
     <nav class="mb-2 navbar navbar-light bg-pgreen">
-
-
-
         <div class="input-group mt-2 ">
             <a href="/"><div class="logo-btn mr-3"><img src="{{ asset('/img/i/misc/tom.png') }}" alt="tom"/></div></a>
             <input id="search" type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="search-addon">
@@ -46,22 +42,22 @@
             <button id="recipe" type="submit" name="recipe" formaction="/recipe/" class="btn btn-dark mb-1">Search by Recipe</button>
             <button id="material" type="submit" name="material" formaction="/material/" class="btn btn-dark mb-1">Search by Material</button>
             @foreach($categories as $category)
-                <button class="btn btn-info mb-1" onclick='window.location="/category/{{ $category->category }}"'>{{ $category->category }}</button>
+                <button class="btn btn-info mb-1" onclick='window.location="/category/{{ strtolower($category->category) }}"'>{{ $category->category }}</button>
             @endforeach
         </div>
     </nav>
 
     <script>
         $("#recipe").click(function() {
-            window.location = "/recipe/" + $("#search").val();
+            window.location = "/recipe/" + $("#search").val().toLowerCase();
         });
 
         $("#basic-addon1").click(function() {
-            window.location = "/recipe/" + $("#search").val();
+            window.location = "/recipe/" + $("#search").val().toLowerCase();
         });
 
         $("#material").click(function() {
-            window.location = "/material/" + $("#search").val();
+            window.location = "/material/" + $("#search").val().toLowerCase();
         });
     </script>
 

@@ -11,8 +11,6 @@
 |
 */
 
-Illuminate\Pagination\AbstractPaginator::defaultView("pagination::bootstrap-4");
-
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
