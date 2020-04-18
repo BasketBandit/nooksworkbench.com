@@ -2,7 +2,7 @@
 
 @section('title')
 
-@section('hero')
+@section('content')
         <div id="content" class='text-center'>
             @foreach($recipes as $recipe)
                 <div class="card mt-2 col-md-3 d-inline-flex">

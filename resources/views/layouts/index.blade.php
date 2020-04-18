@@ -14,7 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" sizes="192x192" href="{{ url('/css/style.css') }}">
     <meta name="theme-color" content="#212121">
-    <meta name="description" content="Animal Crossing Crafting Catalog."/>
+    <meta name="description" content="Information about all of your favourite crafting recipes."/>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163890400-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-163890400-1');
+    </script>
 </head>
 
 <body>
@@ -35,10 +45,6 @@
         </div>
     </nav>
 
-    @yield('hero')
-
-    <footer class="footer"><a href="https://docs.google.com/spreadsheets/d/1Hxrdp7oxtK-J5x9u1-rzChUpLtkv3t0_kNGdS6dtyWI/">Datasource</a></footer>
-
     <script>
         $("#recipe").click(function() {
             window.location = "/recipe/" + $("#search").val();
@@ -48,6 +54,10 @@
             window.location = "/material/" + $("#search").val();
         });
     </script>
+
+    @yield('content')
+
+    <footer class="footer"><a href="https://docs.google.com/spreadsheets/d/1Hxrdp7oxtK-J5x9u1-rzChUpLtkv3t0_kNGdS6dtyWI/">Datasource</a></footer>
 </body>
 
 </html>
