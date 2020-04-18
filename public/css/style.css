@@ -55,6 +55,15 @@ a, a:hover, a:visited, a:link {
     color: white;
 }
 
+#content {
+    text-align: center;
+}
+
+.card-deck {
+    max-width: 100%;
+    justify-content: center;
+}
+
 .card {
     padding-left: 0px!important;
     padding-right: 0px!important;
@@ -66,7 +75,7 @@ a, a:hover, a:visited, a:link {
 }
 
 .mat img {
-    max-width: 25%;
+    max-width: 40px;
     min-width: 40px;
 }
 
@@ -75,14 +84,14 @@ a, a:hover, a:visited, a:link {
     display: inline-block;
 }
 
+.mat-val {
+    float: right;
+}
+
 .social-btn {
     max-width: 40px;
     min-width: 40px;
     margin: 10px;
-}
-
-.mat-val {
-    float: right;
 }
 
 .badge {
