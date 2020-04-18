@@ -1,0 +1,59 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.w-48 {
+    min-width: 48%;
+    max-width: 100%;
+}
+
+.foot-img {
+    max-width: 38px;
+    min-width: 38px;
+}
+
+.card {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+.btn-light {
+    background-color: rgba(0,0,0,.03);
+    border-color: rgba(0,0,0,.03);
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.mat img {
+    max-width: 25%;
+    min-width: 40px;
+}
+
+.mat-img {
+    max-width: 40px;
+    display: inline-block;
+}
+
+.mat-val {
+    float: right;
+}
+
+.badge {
+    text-align: right;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #777777;
+}
