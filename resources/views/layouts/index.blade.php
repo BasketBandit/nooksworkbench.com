@@ -23,18 +23,31 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-search text-white"aria-hidden="true"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Search" aria-label="search" id="search" aria-describedby="basic-addon1">
+            <input id="search" type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="basic-addon1">
         </div>
 
         <div class="mt-3 mb-2 mr-2">
-            <button type="submit" class="btn btn-primary">Recipe Search</button>
-            <button type="submit" class="btn btn-primary">Material Search</button>
+            <button id="recipe" type="submit" name="recipe" formaction="/recipe/" class="btn btn-primary">Recipe Search</button>
+            <button id="material" type="submit" name="material" formaction="/material/" class="btn btn-primary">Material Search</button>
+            @foreach($categories as $category)
+                <button class="btn btn-light" onclick='window.location="/category/{{ $category->category }}"'>{{ $category->category }}</button>
+            @endforeach
         </div>
     </nav>
 
     @yield('hero')
 
     <footer class="footer"><a href="https://docs.google.com/spreadsheets/d/1Hxrdp7oxtK-J5x9u1-rzChUpLtkv3t0_kNGdS6dtyWI/">Datasource</a></footer>
+
+    <script>
+        $("#recipe").click(function() {
+            window.location = "/recipe/" + $("#search").val();
+        });
+
+        $("#material").click(function() {
+            window.location = "/material/" + $("#search").val();
+        });
+    </script>
 </body>
 
 </html>
