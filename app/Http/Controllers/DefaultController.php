@@ -7,7 +7,7 @@ use App\Recipe;
 class DefaultController extends Controller {
 	public function index() {
 	    $categories = DB::table('recipe')->select('category')->groupBy('category')->get();
-		$recipes = Recipe::all();
+		$recipes = DB::table('recipe')->paginate(24);
 		return view('index', compact('categories','recipes'));
 	}
 
@@ -25,19 +25,19 @@ class DefaultController extends Controller {
                                       ->orWhere('m4_id','LIKE','%'.$name."%")
                                       ->orWhere('m5_id','LIKE','%'.$name."%")
                                       ->orWhere('m6_id','LIKE','%'.$name."%")
-                                      ->get();
+                                      ->paginate(24);
 		return view('index', compact('categories','recipes'));
     }
 
     public function category($name) {
         $categories = DB::table('recipe')->select('category')->groupBy('category')->get();
-        $recipes = DB::table('recipe')->where('category','=',$name)->get();
+        $recipes = DB::table('recipe')->where('category','=',$name)->paginate(24);
 		return view('index', compact('categories','recipes'));
     }
 
     public function size($name) {
         $categories = DB::table('recipe')->select('category')->groupBy('category')->get();
-        $recipes = DB::table('recipe')->where('grid','=',$name)->get();
+        $recipes = DB::table('recipe')->where('grid','=',$name)->paginate(24);
 		return view('index', compact('categories','recipes'));
     }
 }

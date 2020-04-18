@@ -1,0 +1,8 @@
+ul.pagination {
+    display: inline-flex!important;
+}
+
+ul.pagination li a {
+    color:#007bff;
+}
+

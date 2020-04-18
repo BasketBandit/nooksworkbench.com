@@ -95,6 +95,8 @@
                 </div>
             @endforeach
         </div>
+
+        <div class="p-3 text-center"><div class="container">{{ $recipes->render() }}</div></div>
 @endsection
 
 
