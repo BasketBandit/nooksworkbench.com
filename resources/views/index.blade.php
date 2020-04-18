@@ -5,7 +5,7 @@
 @section('content')
         <div id="content" class='text-center'>
             @foreach($recipes as $recipe)
-                <div class="card mt-2 col-md-3 d-inline-flex">
+                <div class="card mb-2 col-md-3 d-inline-flex">
                   <div class="row no-gutters">
 
                     <div class="col-md-4 mr-3 p-2">
