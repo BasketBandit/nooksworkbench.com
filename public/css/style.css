@@ -16,26 +16,33 @@ body {
     max-width: 100%;
 }
 
-.page-header h1 {
-    margin: 0px;
+.page-header {
+    width: 100%;
+    margin: 10px 0px 0px;
     padding: 0px;
     color: white;
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Patrick Hand', cursive;
+}
+
+#search {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#search-addon {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-bottom: 2px;
+}
+
+.logo-btn img {
+    display: inline-block;
+    max-width: 40px;
 }
 
 .input-group-text {
     background-color: #17a2b8;
     border-color: #17a2b8;
-}
-
-.foot-img {
-    max-width: 38px;
-    min-width: 38px;
-}
-
-.card {
-    padding-left: 0px!important;
-    padding-right: 0px!important;
 }
 
 .btn-light {
@@ -46,6 +53,11 @@ body {
 a, a:hover, a:visited, a:link {
     text-decoration: none;
     color: white;
+}
+
+.card {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
 }
 
 .card a {
@@ -83,4 +95,9 @@ a, a:hover, a:visited, a:link {
     width: 100%;
     height: 60px;
     color: white;
+}
+
+.foot-img {
+    max-width: 38px;
+    min-width: 38px;
 }

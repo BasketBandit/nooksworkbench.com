@@ -8,12 +8,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
 
     <meta name="_token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" sizes="192x192" href="{{ url('/css/style.css') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     <meta name="theme-color" content="#212121">
     <meta name="description" content="Information about all of your favourite crafting recipes."/>
 
@@ -29,29 +29,33 @@
 </head>
 
 <body>
-    <div class="page-header pb-1 pt-1 pl-3 bg-pgreen">
-        <h1>Nook's Workbench</h1>
-    </div>
-
     <nav class="mb-2 navbar navbar-light bg-pgreen">
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text btn-info" id="basic-addon1"><i class="fas fa-search text-white"aria-hidden="true"></i></span>
+
+
+
+        <div class="input-group mt-2 ">
+            <a href="/"><div class="logo-btn mr-3"><img src="{{ asset('/img/i/misc/tom.png') }}" alt="tom"/></div></a>
+            <input id="search" type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="search-addon">
+            <div class="input-group-append">
+                <span class="input-group-text btn-info mr-5" id="search-addon"><i class="fas fa-search text-white"aria-hidden="true"></i></span>
             </div>
-            <input id="search" type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="basic-addon1">
         </div>
 
         <div class="mt-3 mb-2 mr-2">
-            <button id="recipe" type="submit" name="recipe" formaction="/recipe/" class="btn btn-dark">Search by Recipe</button>
-            <button id="material" type="submit" name="material" formaction="/material/" class="btn btn-dark">Search by Material</button>
+            <button id="recipe" type="submit" name="recipe" formaction="/recipe/" class="btn btn-dark mb-1">Search by Recipe</button>
+            <button id="material" type="submit" name="material" formaction="/material/" class="btn btn-dark mb-1">Search by Material</button>
             @foreach($categories as $category)
-                <button class="btn btn-info" onclick='window.location="/category/{{ $category->category }}"'>{{ $category->category }}</button>
+                <button class="btn btn-info mb-1" onclick='window.location="/category/{{ $category->category }}"'>{{ $category->category }}</button>
             @endforeach
         </div>
     </nav>
 
     <script>
         $("#recipe").click(function() {
+            window.location = "/recipe/" + $("#search").val();
+        });
+
+        $("#basic-addon1").click(function() {
             window.location = "/recipe/" + $("#search").val();
         });
 
