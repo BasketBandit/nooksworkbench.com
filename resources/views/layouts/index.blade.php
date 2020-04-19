@@ -48,19 +48,6 @@
         </div>
     </nav>
 
-    <script>
-        $("#recipe").click(function() {
-            window.location = "/recipe/" + $("#search").val().toLowerCase();
-        });
-
-        $("#basic-addon1").click(function() {
-            window.location = "/recipe/" + $("#search").val().toLowerCase();
-        });
-
-        $("#material").click(function() {
-            window.location = "/material/" + $("#search").val().toLowerCase();
-        });
-    </script>
 
     @yield('content')
 
@@ -84,6 +71,8 @@
             <a href="https://docs.google.com/spreadsheets/d/1Hxrdp7oxtK-J5x9u1-rzChUpLtkv3t0_kNGdS6dtyWI/" target="_blank">Data Source</a>
         </div>
     </footer>
+
+    <script src="{{ url('/js/search.js') }}" type="text/javascript"></script>
 </body>
 
 </html>
