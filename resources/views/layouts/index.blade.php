@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url('/css/pagination.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/mobile.css') }}" />
 
     <meta name="_token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">

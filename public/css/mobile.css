@@ -1,0 +1,17 @@
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 98%;
+    }
+
+    .card-img-wrap {
+        text-align: center;
+    }
+
+    .card-img-top {
+        width: 50%;
+    }
+
+    .card-footer .row {
+        flex-wrap: nowrap;
+    }
+}
