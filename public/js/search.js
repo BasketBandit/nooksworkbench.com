@@ -1,6 +1,6 @@
 $("#search").on('keypress',function(e) {
     if(e.which === 13) {
-        window.location = "/item/" + $("#search").val().toLowerCase();
+        window.location = "/browse/" + $("#search").val().toLowerCase();
     }
 });
 

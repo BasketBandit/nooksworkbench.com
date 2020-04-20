@@ -4,6 +4,12 @@
 
 @section('content')
         <div id="content">
+            @if(count($recipes) == 0)
+                <div class="alert alert-warning" role="alert">
+                    Sorry! Whatever you're trying to find doesn't exist here! ...exist here!
+                </div>
+            @endif
+
             @php $i = 1 @endphp
             @foreach($recipes as $recipe)
                 @if($i == 1)
