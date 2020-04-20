@@ -27,7 +27,7 @@
                                         <div class="mat rounded w-100 p-1 mb-1 bg-light">
                                             <div class="mat-img"><img src="{{ secure_asset('/img/i/inventory/'.$recipe->m1_id.'.png') }}" alt="{{ $recipe->m1_id }}"/></div>
                                             <div class="mat-txt d-inline-block">{{ $recipe->m1_id }}</div>
-                                            <div class="mat-val"><span class="mat-val badge badge-primary">x{{ $recipe->m1_val }}</span></div>
+                                            <div class="mat-val"><span class="mat-val badge badge-nook">x{{ $recipe->m1_val }}</span></div>
                                         </div>
                                     </a>
                                 @endif
@@ -36,7 +36,7 @@
                                         <div class="mat rounded w-100 p-1 mb-1 bg-light">
                                             <div class="mat-img"><img src="{{ secure_asset('/img/i/inventory/'.$recipe->m2_id.'.png') }}" alt="{{ $recipe->m2_id }}"/></div>
                                             <div class="mat-txt d-inline-block">{{ $recipe->m2_id }}</div>
-                                            <div class="mat-val"><span class="mat-val badge badge-primary">x{{ $recipe->m2_val }}</span></div>
+                                            <div class="mat-val"><span class="mat-val badge badge-nook">x{{ $recipe->m2_val }}</span></div>
                                         </div>
                                     </a>
                                 @endif
@@ -45,7 +45,7 @@
                                         <div class="mat rounded w-100 p-1 mb-1 bg-light">
                                             <div class="mat-img"><img src="{{ secure_asset('/img/i/inventory/'.$recipe->m3_id.'.png') }}" alt="{{ $recipe->m3_id }}"/></div>
                                             <div class="mat-txt d-inline-block">{{ $recipe->m3_id }}</div>
-                                            <div class="mat-val"><span class="mat-val badge badge-primary">x{{ $recipe->m3_val }}</span></div>
+                                            <div class="mat-val"><span class="mat-val badge badge-nook">x{{ $recipe->m3_val }}</span></div>
                                         </div>
                                     </a>
                                 @endif
@@ -54,7 +54,7 @@
                                         <div class="mat rounded w-100 p-1 mb-1 bg-light">
                                             <div class="mat-img"><img src="{{ secure_asset('/img/i/inventory/'.$recipe->m4_id.'.png') }}" alt="{{ $recipe->m4_id }}"/></div>
                                             <div class="mat-txt d-inline-block">{{ $recipe->m4_id }}</div>
-                                            <div class="mat-val"><span class="mat-val badge badge-primary">x{{ $recipe->m4_val }}</span></div>
+                                            <div class="mat-val"><span class="mat-val badge badge-nook">x{{ $recipe->m4_val }}</span></div>
                                         </div>
                                     </a>
                                 @endif
@@ -63,7 +63,7 @@
                                         <div class="mat rounded w-100 p-1 mb-1 bg-light">
                                             <div class="mat-img"><img src="{{ secure_asset('/img/i/inventory/'.$recipe->m5_id.'.png') }}" alt="{{ $recipe->m5_id }}"/></div>
                                             <div class="mat-txt d-inline-block">{{ $recipe->m5_id }}</div>
-                                            <div class="mat-val"><span class="mat-val badge badge-primary">x{{ $recipe->m5_val }}</span></div>
+                                            <div class="mat-val"><span class="mat-val badge badge-nook">x{{ $recipe->m5_val }}</span></div>
                                         </div>
                                     </a>
                                 @endif
@@ -72,7 +72,7 @@
                                         <div class="mat rounded w-100 p-1 mb-1 bg-light">
                                             <div class="mat-img"><img src="{{ secure_asset('/img/i/inventory/'.$recipe->m6_id.'.png') }}" alt="{{ $recipe->m6_id }}"/></div>
                                             <div class="mat-txt d-inline-block">{{ $recipe->m6_id }}</div>
-                                            <div class="mat-val"><span class="mat-val badge badge-primary">x{{ $recipe->m6_val }}</span></div>
+                                            <div class="mat-val"><span class="mat-val badge badge-nook">x{{ $recipe->m6_val }}</span></div>
                                         </div>
                                     </a>
                                 @endif

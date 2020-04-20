@@ -35,21 +35,21 @@
             <a href="/"><div class="logo-btn mr-3"><img src="{{ secure_asset('/img/i/misc/tom.png') }}" alt="tom"/></div></a>
             <input id="search" type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="search-addon">
             <div class="input-group-append">
-                <span class="input-group-text btn-info mr-5" id="search-addon"><i class="fas fa-search text-white" aria-hidden="true"></i></span>
+                <span class="input-group-text btn-info" id="search-addon"><i class="fas fa-search text-white" aria-hidden="true"></i></span>
             </div>
         </div>
 
         <div class="mt-3 mb-2 mr-2">
-            <button id="recipe-search" class="btn btn-dark mb-1" type="submit" name="recipe" formaction="/recipe/">Search by Recipe</button>
-            <button id="material-search" class="btn btn-dark mb-1" type="submit" name="material" formaction="/material/">Search by Material</button>
-            <button id="tag-search" class="btn btn-dark mb-1" type="submit" name="tag" formaction="/tag/">Search by Tag</button>
-            <button id="nav-category" class="btn btn-primary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Categories</button>
-            <button id="nav-tag"class="btn btn-primary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Tags</button>
+            <button id="recipe-search" class="btn btn-nook mb-1" type="submit" name="recipe" formaction="/recipe/">Search by Recipe</button>
+            <button id="material-search" class="btn btn-nook mb-1" type="submit" name="material" formaction="/material/">Search by Material</button>
+            <button id="tag-search" class="btn btn-nook mb-1" type="submit" name="tag" formaction="/tag/">Search by Tag</button>
+            <button id="nav-category" class="btn btn-nook-secondary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Categories</button>
+            <button id="nav-tag"class="btn btn-nook-secondary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Tags</button>
 
             <div id="nav-extended-category">
                 @foreach($categories as $category)
                     @if($category->category)
-                        <button class="btn btn-info mb-1" onclick='window.location="/category/{{ strtolower($category->category) }}"'>{{ $category->category }}</button>
+                        <button class="btn-sm btn-info mb-1" onclick='window.location="/category/{{ strtolower($category->category) }}"'>{{ $category->category }}</button>
                     @endif
                 @endforeach
             </div>
@@ -57,7 +57,7 @@
             <div id="nav-extended-tag">
                 @foreach($tags as $tag)
                     @if($tag->tag)
-                        <button class="btn btn-info mb-1" onclick='window.location="/tag/{{ strtolower($tag->tag) }}"'>{{ $tag->tag }}</button>
+                        <button class="btn-sm btn-info mb-1" onclick='window.location="/tag/{{ strtolower($tag->tag) }}"'>{{ $tag->tag }}</button>
                     @endif
                 @endforeach
             </div>

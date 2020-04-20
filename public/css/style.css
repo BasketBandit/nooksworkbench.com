@@ -63,6 +63,30 @@ a, a:hover, a:visited, a:link {
     color: white;
 }
 
+.btn-nook {
+    color: #000000;
+    background-color: #f7cc64;
+    border-radius: 10px;
+}
+
+.btn-nook:hover {
+    background-color: #f6c858;
+}
+
+.btn-nook-secondary {
+    color: #000000;
+    background-color: #f0e8c0;
+    border-radius: 10px;
+}
+
+.btn-nook-secondary:hover {
+    background-color: #e8e4b8;
+}
+
+.btn-info {
+    border-radius: 5px;
+}
+
 #content {
     text-align: center;
 }
@@ -94,6 +118,11 @@ a, a:hover, a:visited, a:link {
 
 .mat-val {
     float: right;
+}
+
+.badge-nook {
+    color: #ffffff;
+    background-color: #83d6aa;
 }
 
 .social-btn {
