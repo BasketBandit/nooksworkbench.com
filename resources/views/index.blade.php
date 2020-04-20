@@ -12,7 +12,7 @@
                     <div class="card col-md-3 ml-1 mr-1 text-left">
                       <div class="row no-gutters h-100">
                         <div class="card-img-wrap col-md-4 p-2">
-                          <a href="/recipe/{{ strtolower($recipe->name) }}"><img class="card-img-top m-1 bg-light rounded" src="{{ $recipe->image }}" alt="{{ $recipe->name }}"></a>
+                          <a href="/recipe/{{ strtolower($recipe->name) }}"><img class="card-img-top m-1 p-2 bg-light rounded" src="{{ $recipe->image }}" alt="{{ $recipe->name }}"></a>
                         </div>
 
                         <div class="col w-100">
