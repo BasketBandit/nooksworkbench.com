@@ -106,8 +106,6 @@
                                   </div>
                               @endif
 
-
-
                               @if($recipe->sell > 0)
                                   <div class="col-sm text-right">
                                       <img class="foot-img" src="{{ secure_asset('/img/i/inventory/Bells.png') }}" alt="{{ $recipe->sell }}"/> {{ $recipe->sell }}

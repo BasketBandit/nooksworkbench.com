@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'DefaultController@index');
-Route::get('/recipe/{name}', 'DefaultController@recipe');
+Route::get('/browse/{name}', 'DefaultController@browse');
+Route::get('/recipe/{name}','DefaultController@recipe');
 Route::get('/material/{name}', 'DefaultController@material');
 Route::get('/category/{name}', 'DefaultController@category');
 Route::get('/size/{name}', 'DefaultController@size');

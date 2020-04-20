@@ -12,11 +12,18 @@ class DefaultController extends Controller {
 		return view('index', compact('categories', 'tags', 'recipes'));
 	}
 
-	public function recipe($name) {
+	public function browse($name) {
 	    $categories = DB::table('recipe')->select('category')->groupBy('category')->get();
 	    $tags = DB::table('recipe')->select('tag')->groupBy('tag')->get();
         $recipes = DB::table('recipe')->where('name','LIKE','%'.$name."%")->paginate(24);
 		return view('index', compact('categories', 'tags', 'recipes'));
+    }
+
+    public function recipe($name) {
+        $categories = DB::table('recipe')->select('category')->groupBy('category')->get();
+        $tags = DB::table('recipe')->select('tag')->groupBy('tag')->get();
+        $recipes = DB::table('recipe')->where('name','=',$name)->paginate(24);
+        return view('index', compact('categories', 'tags', 'recipes'));
     }
 
     public function material($name) {

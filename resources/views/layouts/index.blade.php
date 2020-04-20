@@ -40,11 +40,11 @@
         </div>
 
         <div class="mt-3 mb-2 mr-2">
-            <button id="recipe-search" class="btn btn-nook mb-1" type="submit" name="recipe" formaction="/recipe/">Search by Recipe</button>
+            <button id="item-search" class="btn btn-nook mb-1" type="submit" name="item" formaction="/recipe/">Search by Item</button>
             <button id="material-search" class="btn btn-nook mb-1" type="submit" name="material" formaction="/material/">Search by Material</button>
             <button id="tag-search" class="btn btn-nook mb-1" type="submit" name="tag" formaction="/tag/">Search by Tag</button>
             <button id="nav-category" class="btn btn-nook-secondary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Categories</button>
-            <button id="nav-tag"class="btn btn-nook-secondary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Tags</button>
+            <button id="nav-tag" class="btn btn-nook-secondary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Tags</button>
 
             <div id="nav-extended-category">
                 @foreach($categories as $category)
