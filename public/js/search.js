@@ -19,3 +19,13 @@ $("#material-search").click(function() {
 $("#tag-search").click(function() {
     window.location = "/tag/" + $("#search").val().toLowerCase();
 });
+
+$('#nav-category').click(function(){
+    $('#nav-extended-category').toggleClass('visible');
+    $('#nav-extended-tag').removeClass('visible');
+});
+
+$('#nav-tag').click(function(){
+    $('#nav-extended-tag').toggleClass('visible');
+    $('#nav-extended-category').removeClass('visible');
+});

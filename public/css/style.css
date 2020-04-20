@@ -40,7 +40,7 @@ body {
 }
 
 .dropdown-item:active {
-    background-color: #dddddd;
+    background-color: #cccccc;
 }
 
 .logo-btn img {
@@ -117,4 +117,16 @@ a, a:hover, a:visited, a:link {
 .foot-img {
     max-width: 38px;
     min-width: 38px;
+}
+
+#nav-extended-category {
+    display: none;
+}
+
+#nav-extended-tag {
+    display: none;
+}
+
+.visible {
+    display: block !important;
 }
