@@ -1,15 +1,15 @@
 $("#search").on('keypress',function(e) {
     if(e.which === 13) {
-        window.location = "/recipe/" + $("#search").val().toLowerCase();
+        window.location = "/item/" + $("#search").val().toLowerCase();
     }
 });
 
 $("#search-addon").click(function() {
-    window.location = "/recipe/" + $("#search").val().toLowerCase();
+    window.location = "/browse/" + $("#search").val().toLowerCase();
 });
 
-$("#recipe-search").click(function() {
-    window.location = "/recipe/" + $("#search").val().toLowerCase();
+$("#item-search").click(function() {
+    window.location = "/browse/" + $("#search").val().toLowerCase();
 });
 
 $("#material-search").click(function() {
@@ -23,9 +23,17 @@ $("#tag-search").click(function() {
 $('#nav-category').click(function(){
     $('#nav-extended-category').toggleClass('visible');
     $('#nav-extended-tag').removeClass('visible');
+    $('#nav-extended-source').removeClass('visible');
 });
 
 $('#nav-tag').click(function(){
     $('#nav-extended-tag').toggleClass('visible');
+    $('#nav-extended-category').removeClass('visible');
+    $('#nav-extended-source').removeClass('visible');
+});
+
+$('#nav-source').click(function(){
+    $('#nav-extended-source').toggleClass('visible');
+    $('#nav-extended-tag').removeClass('visible');
     $('#nav-extended-category').removeClass('visible');
 });

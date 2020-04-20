@@ -148,11 +148,7 @@ a, a:hover, a:visited, a:link {
     min-width: 38px;
 }
 
-#nav-extended-category {
-    display: none;
-}
-
-#nav-extended-tag {
+#nav-extended-category, #nav-extended-tag, #nav-extended-source {
     display: none;
 }
 

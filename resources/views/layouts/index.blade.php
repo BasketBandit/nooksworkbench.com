@@ -45,6 +45,7 @@
             <button id="tag-search" class="btn btn-nook mb-1" type="submit" name="tag" formaction="/tag/">Search by Tag</button>
             <button id="nav-category" class="btn btn-nook-secondary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Categories</button>
             <button id="nav-tag" class="btn btn-nook-secondary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Tags</button>
+            <button id="nav-source" class="btn btn-nook-secondary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Sources</button>
 
             <div id="nav-extended-category">
                 @foreach($categories as $category)
@@ -58,6 +59,14 @@
                 @foreach($tags as $tag)
                     @if($tag->tag)
                         <button class="btn-sm btn-info mb-1" onclick='window.location="/tag/{{ strtolower($tag->tag) }}"'>{{ $tag->tag }}</button>
+                    @endif
+                @endforeach
+            </div>
+
+            <div id="nav-extended-source">
+                @foreach($sources as $source)
+                    @if($source->source)
+                        <button class="btn-sm btn-info mb-1" onclick='window.location="/source/{{ strtolower($source->source) }}"'>{{ $source->source }}</button>
                     @endif
                 @endforeach
             </div>
