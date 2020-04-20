@@ -8,10 +8,14 @@ $("#search-addon").click(function() {
     window.location = "/recipe/" + $("#search").val().toLowerCase();
 });
 
-$("#recipe").click(function() {
+$("#recipe-search").click(function() {
     window.location = "/recipe/" + $("#search").val().toLowerCase();
 });
 
-$("#material").click(function() {
+$("#material-search").click(function() {
     window.location = "/material/" + $("#search").val().toLowerCase();
+});
+
+$("#tag-search").click(function() {
+    window.location = "/tag/" + $("#search").val().toLowerCase();
 });

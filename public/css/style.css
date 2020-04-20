@@ -35,6 +35,14 @@ body {
     margin-bottom: 2px;
 }
 
+.btn-group a:link, .btn-group a:active, .btn-group a:hover, .btn-group a:visited {
+    color: #636b6f!important;
+}
+
+.dropdown-item:active {
+    background-color: #dddddd;
+}
+
 .logo-btn img {
     display: inline-block;
     max-width: 40px;

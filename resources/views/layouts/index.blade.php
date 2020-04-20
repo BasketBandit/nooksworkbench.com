@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <nav class="mb-2 navbar navbar-light bg-pgreen">
+    <nav class="mb-2 navbar navbar-expand-lg navbar-light bg-pgreen">
         <div class="input-group mt-2 ">
             <a href="/"><div class="logo-btn mr-3"><img src="{{ secure_asset('/img/i/misc/tom.png') }}" alt="tom"/></div></a>
             <input id="search" type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="search-addon">
@@ -40,11 +40,27 @@
         </div>
 
         <div class="mt-3 mb-2 mr-2">
-            <button id="recipe" type="submit" name="recipe" formaction="/recipe/" class="btn btn-dark mb-1">Search by Recipe</button>
-            <button id="material" type="submit" name="material" formaction="/material/" class="btn btn-dark mb-1">Search by Material</button>
-            @foreach($categories as $category)
-                <button class="btn btn-info mb-1" onclick='window.location="/category/{{ strtolower($category->category) }}"'>{{ $category->category }}</button>
-            @endforeach
+            <button id="recipe-search" class="btn btn-dark mb-1" type="submit" name="recipe" formaction="/recipe/">Search by Recipe</button>
+            <button id="material-search" class="btn btn-dark mb-1" type="submit" name="material" formaction="/material/">Search by Material</button>
+            <button id="tag-search" class="btn btn-dark mb-1" type="submit" name="tag" formaction="/tag/">Search by Tag</button>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary mb-1 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</button>
+                <div class="dropdown-menu">
+                    @foreach($categories as $category)
+                        <a class="dropdown-item" href="/category/{{ strtolower($category->category) }}"'>{{ $category->category }}</a>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary mb-1 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tags</button>
+                <div class="dropdown-menu">
+                    @foreach($tags as $tag)
+                    <a class="dropdown-item" href="/tag/{{ strtolower($tag->tag) }}"'>{{ $tag->tag }}</a>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </nav>
 

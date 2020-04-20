@@ -80,33 +80,37 @@
                         </div>
                       </div>
 
+                        <div class="row ml-1 mr-1 mb-1 pl-1 pr-1 bg-light">
+                            <div class="text-center mr-1">
+                                <a href="/category/{{ strtolower($recipe->category) }}"><button class="btn-sm btn-light mt-1 mb-1 text-center text-muted">{{ $recipe->category }}</button></a>
+                            </div>
+
+                            @if($recipe->tag)
+                            <div class="text-center mr-1">
+                                <a href="/tag/{{ strtolower($recipe->tag) }}"><button class="btn-sm btn-light mt-1 mb-1 text-center text-muted">{{ $recipe->tag }}</button></a>
+                            </div>
+                            @endif
+
+                            @if($recipe->source)
+                            <div class="text-center mr-1">
+                                <a href="/source/{{ strtolower($recipe->source) }}"><button class="btn-sm btn-light mt-1 mb-1 text-center text-muted">{{ $recipe->source }}</button></a>
+                            </div>
+                            @endif
+                        </div>
+
                       <div class="card-footer text-muted">
                           <div class="row">
                               @if($recipe->grid)
-                                  <div class="col-sm text-center">
+                                  <div class="col-sm text-left">
                                       <a href="/size/{{ strtolower($recipe->grid) }}"><img class="foot-img" src="{{ secure_asset('/img/i/grid/'.$recipe->grid.'.jpg') }}" alt="{{ $recipe->grid }}"/></a>
                                   </div>
                               @endif
 
-                              @if($recipe->tag)
-                                  <div class="col-sm text-center">
-                                      <a href="/tag/{{ strtolower($recipe->tag) }}"><button class="btn btn-light text-right text-muted">{{ $recipe->tag }}</button></a>
-                                  </div>
-                              @endif
 
-                              @if($recipe->source)
-                                  <div class="col-sm text-center">
-                                      <a href="/source/{{ strtolower($recipe->source) }}"><button class="btn btn-light text-right text-muted">{{ $recipe->source }}</button></a>
-                                  </div>
-                              @endif
-
-                              <div class="col-sm text-center">
-                                  <a href="/category/{{ strtolower($recipe->category) }}"><button class="btn btn-light text-right text-muted">{{ $recipe->category }}</button></a>
-                              </div>
 
                               @if($recipe->sell > 0)
-                                  <div class="col-sm text-center">
-                                      <button class="btn btn-light text-right text-muted"><img class="foot-img" src="{{ secure_asset('/img/i/inventory/Bells.png') }}" alt="{{ $recipe->sell }}"/> {{ $recipe->sell }}</button>
+                                  <div class="col-sm text-right">
+                                      <img class="foot-img" src="{{ secure_asset('/img/i/inventory/Bells.png') }}" alt="{{ $recipe->sell }}"/> {{ $recipe->sell }}
                                   </div>
                               @endif
                           </div>
