@@ -40,4 +40,16 @@ class DefaultController extends Controller {
         $recipes = DB::table('recipe')->where('grid','=',$name)->paginate(24);
 		return view('index', compact('categories','recipes'));
     }
+
+    public function tag($name) {
+        $categories = DB::table('recipe')->select('category')->groupBy('category')->get();
+        $recipes = DB::table('recipe')->where('tag','=',$name)->paginate(24);
+		return view('index', compact('categories','recipes'));
+    }
+
+    public function source($name) {
+        $categories = DB::table('recipe')->select('category')->groupBy('category')->get();
+        $recipes = DB::table('recipe')->where('source','=',$name)->paginate(24);
+		return view('index', compact('categories','recipes'));
+    }
 }

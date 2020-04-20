@@ -3,10 +3,10 @@
 
 <head>
     <title>@yield('title', 'Nook\'s Workbench')</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
@@ -15,7 +15,7 @@
 
     <meta name="_token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ secure_asset('favicon.png') }}">
     <meta name="theme-color" content="#212121">
     <meta name="description" content="Information about all of your favourite crafting recipes."/>
 
@@ -32,10 +32,10 @@
 <body>
     <nav class="mb-2 navbar navbar-light bg-pgreen">
         <div class="input-group mt-2 ">
-            <a href="/"><div class="logo-btn mr-3"><img src="{{ asset('/img/i/misc/tom.png') }}" alt="tom"/></div></a>
+            <a href="/"><div class="logo-btn mr-3"><img src="{{ secure_asset('/img/i/misc/tom.png') }}" alt="tom"/></div></a>
             <input id="search" type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="search-addon">
             <div class="input-group-append">
-                <span class="input-group-text btn-info mr-5" id="search-addon"><i class="fas fa-search text-white"aria-hidden="true"></i></span>
+                <span class="input-group-text btn-info mr-5" id="search-addon"><i class="fas fa-search text-white" aria-hidden="true"></i></span>
             </div>
         </div>
 
@@ -56,9 +56,9 @@
             <div class="row text-center">
                 <div class="w-100">
                     <p>
-                        <a href="https://github.com/BasketBandit"><img class="social-btn" src="{{ asset('/img/i/social/github.png') }}"/></a>
-                        <a href="https://www.linkedin.com/in/jmh79/"><img class="social-btn" src="{{ asset('/img/i/social/linkedin.png') }}"/></a>
-                        <a href="https://discord.gg/4Tx6G3p"><img class="social-btn" src="{{ asset('/img/i/social/discord.png') }}"/></a>
+                        <a href="https://github.com/BasketBandit" rel="noreferrer"><img class="social-btn" src="{{ secure_asset('/img/i/social/github.png') }}" alt="github"/></a>
+                        <a href="https://www.linkedin.com/in/jmh79/" rel="noreferrer"><img class="social-btn" src="{{ secure_asset('/img/i/social/linkedin.png') }}" alt="linkedin"/></a>
+                        <a href="https://discord.gg/4Tx6G3p"><img class="social-btn lazyload" src="{{ secure_asset('/img/i/social/discord.png') }}" alt="discord"/></a>
                     </p>
 
                 </div>
