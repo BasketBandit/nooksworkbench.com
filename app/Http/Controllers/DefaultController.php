@@ -12,7 +12,7 @@ class DefaultController extends Controller {
     public function __construct() {
         $this->categories = DB::table('recipe')->select('category')->groupBy('category')->get();
         $this->tags = DB::table('recipe')->select('tag')->groupBy('tag')->get();
-        $this->sources = DB::table('recipe')->select('source')->groupBy('source')->get();
+        $this->sources = DB::table('recipe')->selectRaw('substring_index(`source`, ", ", 1) as sources')->groupByRaw('sources')->get();
      }
 
 	public function index() {

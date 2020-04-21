@@ -15,7 +15,7 @@
                 @if($i == 1)
                 <div class="card-deck mb-2">
                 @endif
-                    <div class="card col-md-3 ml-1 mr-1 text-left">
+                    <div id="card" class="card col-md-3 ml-1 mr-1 text-left">
                       <div class="row no-gutters h-100">
                         <div class="card-img-wrap col-md-4 p-2">
                           <a href="/recipe/{{ strtolower($recipe->name) }}"><img class="card-img-top m-1 p-2 bg-light rounded" src="{{ $recipe->image }}" alt="{{ $recipe->name }}"></a>
@@ -24,7 +24,7 @@
                         <div class="col w-100">
                             <div class="card-body text-left">
                                 @if($recipe->customisable == 1)
-                                <i class="fas fa-paint-brush mt-1 float-right"></i>
+                                    <i class="fas fa-paint-brush mt-1 float-right"></i>
                                 @endif
 
                                 <h5 class="card-title text-center">{{ $recipe->name }}</h5>
@@ -99,7 +99,9 @@
 
                             @if($recipe->source)
                             <div class="text-center mr-1">
-                                <a href="/source/{{ strtolower($recipe->source) }}"><button class="btn-sm btn-light mt-1 mb-1 text-center text-muted">{{ $recipe->source }}</button></a>
+                                @foreach(explode(', ', $recipe->source) as $source)
+                                    <a href="/source/{{ strtolower($source) }}"><button class="btn-sm btn-light mt-1 mb-1 text-center text-muted">{{ $source }}</button></a>
+                                @endforeach
                             </div>
                             @endif
                         </div>

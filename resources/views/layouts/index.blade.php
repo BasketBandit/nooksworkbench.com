@@ -65,8 +65,8 @@
 
             <div id="nav-extended-source">
                 @foreach($sources as $source)
-                    @if($source->source)
-                        <button class="btn-sm btn-info mb-1" onclick='window.location="/source/{{ strtolower($source->source) }}"'>{{ $source->source }}</button>
+                    @if($source->sources)
+                        <button class="btn-sm btn-info mb-1" onclick='window.location="/source/{{ strtolower($source->sources) }}"'>{{ $source->sources }}</button>
                     @endif
                 @endforeach
             </div>
