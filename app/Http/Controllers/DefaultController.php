@@ -60,4 +60,9 @@ class DefaultController extends Controller {
         $recipes = DB::table('recipe')->where('source','LIKE','%'.$name.'%')->paginate(24);
 		return view('index')->with('categories', $this->categories)->with('tags', $this->tags)->with('sources', $this->sources)->with('recipes', $recipes);
     }
+
+    public function customisable($name) {
+        $recipes = DB::table('recipe')->where('customisable','=',$name)->paginate(24);
+    	return view('index')->with('categories', $this->categories)->with('tags', $this->tags)->with('sources', $this->sources)->with('recipes', $recipes);
+    }
 }

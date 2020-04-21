@@ -24,7 +24,7 @@
                         <div class="col w-100">
                             <div class="card-body text-left">
                                 @if($recipe->customisable == 1)
-                                    <i class="fas fa-paint-brush mt-1 float-right"></i>
+                                    <a href="/customisable/1"><i class="fas fa-paint-brush mt-1 float-right"></i></a>
                                 @endif
 
                                 <h5 class="card-title text-center">{{ $recipe->name }}</h5>

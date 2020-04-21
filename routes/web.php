@@ -21,6 +21,7 @@ Route::get('/category/{name}', 'DefaultController@category');
 Route::get('/size/{name}', 'DefaultController@size');
 Route::get('/tag/{name}', 'DefaultController@tag');
 Route::get('/source/{name}', 'DefaultController@source');
+Route::get('/customisable/{name}', 'DefaultController@customisable');
 
 Route::get('/img/i/inventory/{filename}', function($filename) {
     return response(file_get_contents('./img/i/inventory/Leaf.png'))->header('Content-Type','image/png');
