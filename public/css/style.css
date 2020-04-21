@@ -5,6 +5,7 @@ html {
 
 body {
     margin-bottom: 60px;
+    background-color: #f0e8c0;
 }
 
 .bg-pgreen {
@@ -58,6 +59,11 @@ body {
     border-color: rgba(0,0,0,.03);
 }
 
+.btn-sm {
+    border: solid; !important;
+    border-color: rgba(255,255,255,.03);
+}
+
 a, a:hover, a:visited, a:link {
     text-decoration: none;
     color: white;
@@ -101,6 +107,14 @@ a, a:hover, a:visited, a:link {
     padding-right: 0px!important;
 }
 
+.card, .card-img-top, .mat {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.card, .card-img-top, .mat, .badge, .btn-sm {
+    border-radius: 15px !important;
+}
+
 .card a {
     text-decoration: none;
     color: black;
@@ -133,6 +147,8 @@ a, a:hover, a:visited, a:link {
 
 .badge {
     text-align: right;
+    margin-top: .25rem;
+    margin-right: .25rem;
 }
 
 .footer {
@@ -150,6 +166,11 @@ a, a:hover, a:visited, a:link {
 
 #nav-extended-category, #nav-extended-tag, #nav-extended-source {
     display: none;
+    border-radius: 15px;
+    margin-top: .25rem;
+    padding-top: .25rem;
+    padding-left: .25rem;
+    padding-right: .25rem;
 }
 
 .visible {

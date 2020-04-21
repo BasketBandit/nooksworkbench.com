@@ -43,7 +43,7 @@ class DefaultController extends Controller {
 
     public function category($name) {
         $recipes = DB::table('recipe')->where('category','=',$name)->paginate(24);
-		return view('index', compact('categories', 'tags', 'sources', 'recipes'));
+		return view('index')->with('categories', $this->categories)->with('tags', $this->tags)->with('sources', $this->sources)->with('recipes', $recipes);
     }
 
     public function size($name) {

@@ -47,30 +47,33 @@
             <button id="nav-tag" class="btn btn-nook-secondary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Tags</button>
             <button id="nav-source" class="btn btn-nook-secondary mb-1 dropdown-toggle" type="button" data-toggle="dropdown">Sources</button>
 
-            <div id="nav-extended-category">
-                @foreach($categories as $category)
-                    @if($category->category)
-                        <button class="btn-sm btn-info mb-1" onclick='window.location="/category/{{ strtolower($category->category) }}"'>{{ $category->category }}</button>
-                    @endif
-                @endforeach
-            </div>
+            <div id="extended-nav-container">
+                <div id="nav-extended-category">
+                    @foreach($categories as $category)
+                        @if($category->category)
+                            <button class="btn-sm btn-info mb-1" onclick='window.location="/category/{{ strtolower($category->category) }}"'>{{ $category->category }}</button>
+                        @endif
+                    @endforeach
+                </div>
 
-            <div id="nav-extended-tag">
-                @foreach($tags as $tag)
-                    @if($tag->tag)
-                        <button class="btn-sm btn-info mb-1" onclick='window.location="/tag/{{ strtolower($tag->tag) }}"'>{{ $tag->tag }}</button>
-                    @endif
-                @endforeach
-            </div>
+                <div id="nav-extended-tag">
+                    @foreach($tags as $tag)
+                        @if($tag->tag)
+                            <button class="btn-sm btn-info mb-1" onclick='window.location="/tag/{{ strtolower($tag->tag) }}"'>{{ $tag->tag }}</button>
+                        @endif
+                    @endforeach
+                </div>
 
-            <div id="nav-extended-source">
-                @foreach($sources as $source)
-                    @if($source->sources)
-                        <button class="btn-sm btn-info mb-1" onclick='window.location="/source/{{ strtolower($source->sources) }}"'>{{ $source->sources }}</button>
-                    @endif
-                @endforeach
+                <div id="nav-extended-source">
+                    @foreach($sources as $source)
+                        @if($source->sources)
+                            <button class="btn-sm btn-info mb-1" onclick='window.location="/source/{{ strtolower($source->sources) }}"'>{{ $source->sources }}</button>
+                        @endif
+                    @endforeach
+                </div>
             </div>
         </div>
+
     </nav>
 
 
