@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>@yield('title', 'Nook\'s Workbench')</title>
+    <title>@yield('title', 'Nook\'s Workbench (AC v1.2.0')</title>
     <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -73,7 +73,6 @@
                 </div>
             </div>
         </div>
-
     </nav>
 
 
@@ -88,7 +87,6 @@
                         <a href="https://www.linkedin.com/in/jmh79/" rel="noreferrer"><img class="social-btn" src="{{ secure_asset('/img/i/social/linkedin.png') }}" alt="linkedin"/></a>
                         <a href="https://discord.gg/4Tx6G3p"><img class="social-btn lazyload" src="{{ secure_asset('/img/i/social/discord.png') }}" alt="discord"/></a>
                     </p>
-
                 </div>
             </div>
         </div>
@@ -96,7 +94,7 @@
         <div class="text-center py-3 bg-pgreen">
             <p>Nooksworkbench is a fan-made website and is in no way affiliated with Nintendo.</p>
             Created by <a href="https://github.com/BasketBandit" target="_blank"><u>Joshua Hunt</u></a> |
-            <a href="https://docs.google.com/spreadsheets/d/1Hxrdp7oxtK-J5x9u1-rzChUpLtkv3t0_kNGdS6dtyWI/" target="_blank">Data Source</a>
+            <a href="https://docs.google.com/spreadsheets/d/13d_LAJPlxMa_DubPTuirkIV4DERBMXbrWQsmSh8ReK4" target="_blank">Data Source</a>
         </div>
     </footer>
 
