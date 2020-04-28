@@ -4,12 +4,18 @@
 <div id="content">
     @if(count($recipes) == 0)
     <div class="alert alert-warning" role="alert">
-        It looks like you haven't unlocked any recipes yet! ...yet!
+        It looks like you haven't unlocked any recipes yet {{ Auth::user()->username }}! ...{{ Auth::user()->username }}!
     </div>
     @endif
 
-    <div class="progress m-2">
-        <div class="progress-bar" role="progressbar" style="width: {{ (count($recipes)/595)*100 }}%;" aria-valuenow="{{ (count($recipes)/595)*100 }}" aria-valuemin="0" aria-valuemax="100">{{ (count($recipes)/595)*100 }}%</div>
+    <div class="alert alert-info" role="alert">
+        <a href="/mybench/settings"><button class="btn btn-warning">Settings</button></a>
+    </div>
+
+
+    <div class="progress mt-4 mb-4">
+        <div class="progress-bar" role="progressbar" style="width: {{ (count($recipes)/595)*100 }}%;" aria-valuenow="{{ ($progress/595)*100 }}" aria-valuemin="0" aria-valuemax="100"></div>
+        <span class="w-100 align-middle progress-label">{{ $progress.'/595' }}</span>
     </div>
 
     @php $i = 1 @endphp
@@ -17,7 +23,7 @@
     @if($i == 1)
     <div class="card-deck mb-2">
         @endif
-        <div class="card col text-left">
+        <div class="card col-md-4 text-left">
             <div class="row no-gutters h-100">
                 <div class="card-img-wrap col-md-4 p-2">
                     <a href="/mybench/recipe/{{ rawurlencode(strtolower($recipe->name)) }}">

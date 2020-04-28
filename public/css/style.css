@@ -41,6 +41,18 @@ h6 {
     margin-bottom: 2px;
 }
 
+.progress {
+    height: 32px;
+}
+
+.progress-bar {
+    background-color: #83d6aa;
+}
+
+.progress-label {
+    line-height: 32px;
+}
+
 .btn-group a:link, .btn-group a:active, .btn-group a:hover, .btn-group a:visited {
     color: #636b6f!important;
 }

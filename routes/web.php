@@ -13,21 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'DefaultController@index');
-Route::get('/browse/{name}', 'DefaultController@browse');
-Route::get('/recipe/{name}','DefaultController@recipe');
-Route::get('/material/{name}', 'DefaultController@material');
-Route::get('/category/{name}', 'DefaultController@category');
-Route::get('/size/{name}', 'DefaultController@size');
-Route::get('/tag/{name}', 'DefaultController@tag');
-Route::get('/source/{name}', 'DefaultController@source');
-Route::get('/customisable/{name}', 'DefaultController@customisable');
+/*
+|--------------------------------------------------------------------------
+| Default Recipe
+|--------------------------------------------------------------------------
+ */
 
-Route::get('/img/i/inventory/{filename}', function($filename) {
-    return response(file_get_contents('./img/i/inventory/Leaf.png'))->header('Content-Type','image/png');
+Route::get('/', 'DefaultRecipeController@index');
+Route::get('/browse/{name}', 'DefaultRecipeController@browse');
+Route::get('/recipe/{name}','DefaultRecipeController@recipe');
+Route::get('/material/{name}', 'DefaultRecipeController@material');
+Route::get('/category/{name}', 'DefaultRecipeController@category');
+Route::get('/size/{name}', 'DefaultRecipeController@size');
+Route::get('/tag/{name}', 'DefaultRecipeController@tag');
+Route::get('/source/{name}', 'DefaultRecipeController@source');
+Route::get('/customisable/{name}', 'DefaultRecipeController@customisable');
+
+Route::get('/i/inventory/{filename}', function($filename) {
+    return response(file_get_contents('./i/inventory/Leaf.png'))->header('Content-Type','image/png');
 });
-Route::get('/img/i/grid/{filename}', function($filename) {
-    return response(file_get_contents('./img/i/inventory/Leaf.png'))->header('Content-Type','image/png');
+Route::get('/i/grid/{filename}', function($filename) {
+    return response(file_get_contents('./i/inventory/Leaf.png'))->header('Content-Type','image/png');
 });
 
 /*
@@ -45,27 +51,33 @@ Route::get('/privacy-policy', function () {
 
 /*
 |--------------------------------------------------------------------------
-| MyBench GET
+| MyBench Recipe
 |--------------------------------------------------------------------------
  */
 
 Auth::routes();
-Route::get('/mybench', 'MyBenchController@index')->name('mybench');
-Route::get('/mybench/browse/{name}', 'MyBenchController@browse');
-Route::get('/mybench/recipe/{name}','MyBenchController@recipe');
-Route::get('/mybench/material/{name}', 'MyBenchController@material');
-Route::get('/mybench/category/{name}', 'MyBenchController@category');
-Route::get('/mybench/size/{name}', 'MyBenchController@size');
-Route::get('/mybench/tag/{name}', 'MyBenchController@tag');
-Route::get('/mybench/source/{name}', 'MyBenchController@source');
-Route::get('/mybench/customisable/{name}', 'MyBenchController@customisable');
+Route::get('/mybench', 'MyBenchRecipeController@index')->name('mybench');
+Route::get('/mybench/browse/{name}', 'MyBenchRecipeController@browse');
+Route::get('/mybench/recipe/{name}','MyBenchRecipeController@recipe');
+Route::get('/mybench/material/{name}', 'MyBenchRecipeController@material');
+Route::get('/mybench/category/{name}', 'MyBenchRecipeController@category');
+Route::get('/mybench/size/{name}', 'MyBenchRecipeController@size');
+Route::get('/mybench/tag/{name}', 'MyBenchRecipeController@tag');
+Route::get('/mybench/source/{name}', 'MyBenchRecipeController@source');
+Route::get('/mybench/customisable/{name}', 'MyBenchRecipeController@customisable');
+
+Route::get('/mybench/settings', function () {
+    return view('mybench_settings');
+});
 
 /*
 |--------------------------------------------------------------------------
-| MyBench POST
+| MyBench Account
 |--------------------------------------------------------------------------
  */
 
-Route::post('/addrecipe/{id}','AjaxController@addrecipe');
-Route::post('/removerecipe/{id}','AjaxController@removerecipe');
+Route::post('/addrecipe/{id}','MyBenchAccountController@addrecipe');
+Route::post('/removerecipe/{id}','MyBenchAccountController@removerecipe');
+
+Route::get('/mybench/settings/deleteAccount', 'MyBenchAccountController@deleteAccount')->name('deleteAccount');
 

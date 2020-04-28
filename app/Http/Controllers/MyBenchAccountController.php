@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Recipe;
 
-class AjaxController extends Controller {
+class MyBenchAccountController extends Controller {
 
     public function __construct() {
         $this->middleware('auth');
@@ -30,4 +30,12 @@ class AjaxController extends Controller {
         }
     }
 
+    public function deleteAccount() {
+        if(Auth::check()) {
+            DB::table('users')
+                ->where('id', '=', Auth::user()->id)
+                ->delete();
+        }
+        return redirect("/");
+    }
 }

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Recipe;
 
-class MyBenchController extends Controller {
+class MyBenchRecipeController extends Controller {
     private $categories;
     private $tags;
     private $sources;

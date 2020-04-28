@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Recipe;
 
-class DefaultController extends Controller {
+class DefaultRecipeController extends Controller {
     private $categories;
     private $tags;
     private $sources;
@@ -26,6 +26,7 @@ class DefaultController extends Controller {
                     $join->on('users_data.recipe_id', '=', 'recipes.id')
                          ->where('users_data.user_id', '=', Auth::user()->id);
                 })
+                ->select('*', 'recipes.id')
                 ->orderBy('name', 'asc')
                 ->paginate(24);
 		} else {
@@ -49,6 +50,7 @@ class DefaultController extends Controller {
                     $join->on('users_data.recipe_id', '=', 'recipes.id')
                          ->where('users_data.user_id', '=', Auth::user()->id);
                 })
+                ->select('*', 'recipes.id')
                 ->where('name','LIKE','%'.$name."%")
                 ->orderBy('name', 'asc')
                 ->paginate(24);
@@ -74,6 +76,7 @@ class DefaultController extends Controller {
                     $join->on('users_data.recipe_id', '=', 'recipes.id')
                          ->where('users_data.user_id', '=', Auth::user()->id);
                 })
+                ->select('*', 'recipes.id')
                 ->where('name','=',$name)
                 ->paginate(24);
         } else {
@@ -97,6 +100,7 @@ class DefaultController extends Controller {
                     $join->on('users_data.recipe_id', '=', 'recipes.id')
                          ->where('users_data.user_id', '=', Auth::user()->id);
                 })
+                ->select('*', 'recipes.id')
                 ->where('m1_id','LIKE','%'.$name."%")
                 ->orWhere('m2_id','LIKE','%'.$name."%")
                 ->orWhere('m3_id','LIKE','%'.$name."%")
@@ -132,6 +136,7 @@ class DefaultController extends Controller {
                     $join->on('users_data.recipe_id', '=', 'recipes.id')
                          ->where('users_data.user_id', '=', Auth::user()->id);
                 })
+                ->select('*', 'recipes.id')
                 ->where('category','=',$name)
                 ->orderBy('name', 'asc')
                 ->paginate(24);
@@ -157,6 +162,7 @@ class DefaultController extends Controller {
                     $join->on('users_data.recipe_id', '=', 'recipes.id')
                          ->where('users_data.user_id', '=', Auth::user()->id);
                 })
+                ->select('*', 'recipes.id')
                 ->where('grid','=',$name)
                 ->orderBy('name', 'asc')
                 ->paginate(24);
@@ -182,6 +188,7 @@ class DefaultController extends Controller {
                     $join->on('users_data.recipe_id', '=', 'recipes.id')
                          ->where('users_data.user_id', '=', Auth::user()->id);
                 })
+                ->select('*', 'recipes.id')
                 ->where('tag','LIKE','%'.$name.'%')
                 ->orderBy('name', 'asc')
                 ->paginate(24);
@@ -206,6 +213,7 @@ class DefaultController extends Controller {
                     $join->on('users_data.recipe_id', '=', 'recipes.id')
                          ->where('users_data.user_id', '=', Auth::user()->id);
                 })
+                ->select('*', 'recipes.id')
                 ->where('source','LIKE','%'.$name.'%')
                 ->orderBy('name', 'asc')
                 ->paginate(24);
@@ -231,6 +239,7 @@ class DefaultController extends Controller {
                     $join->on('users_data.recipe_id', '=', 'recipes.id')
                          ->where('users_data.user_id', '=', Auth::user()->id);
                 })
+                ->select('*', 'recipes.id')
                 ->where('customisable','=',$name)
                 ->orderBy('name', 'asc')
                 ->paginate(24);
