@@ -1,7 +1,9 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Recipe;
 
 class DefaultController extends Controller {
@@ -18,9 +20,19 @@ class DefaultController extends Controller {
      }
 
 	public function index() {
-		$recipes = DB::table('recipes')
-		    ->orderBy('name', 'asc')
-		    ->paginate(24);
+	    if(Auth::check()) {
+            $recipes = DB::table('recipes')
+                ->leftJoin('users_data', function ($join) {
+                    $join->on('users_data.recipe_id', '=', 'recipes.id')
+                         ->where('users_data.user_id', '=', Auth::user()->id);
+                })
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+		} else {
+            $recipes = DB::table('recipes')
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+		}
 
 		return view('index')
 		    ->with('base_url', $this->base_url)
@@ -31,10 +43,21 @@ class DefaultController extends Controller {
 	}
 
 	public function browse($name) {
-        $recipes = DB::table('recipes')
-            ->where('name','LIKE','%'.$name."%")
-            ->orderBy('name', 'asc')
-            ->paginate(24);
+	    if(Auth::check()) {
+            $recipes = DB::table('recipes')
+                ->leftJoin('users_data', function ($join) {
+                    $join->on('users_data.recipe_id', '=', 'recipes.id')
+                         ->where('users_data.user_id', '=', Auth::user()->id);
+                })
+                ->where('name','LIKE','%'.$name."%")
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+		} else {
+            $recipes = DB::table('recipes')
+                ->where('name','LIKE','%'.$name."%")
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+		}
 
 		return view('index')
 		    ->with('base_url', $this->base_url)
@@ -45,10 +68,19 @@ class DefaultController extends Controller {
     }
 
     public function recipe($name) {
-        $recipes = DB::table('recipes')
-            ->where('name','=',$name)
-            ->orderBy('name', 'asc')
-            ->paginate(24);
+        if(Auth::check()) {
+            $recipes = DB::table('recipes')
+                ->leftJoin('users_data', function ($join) {
+                    $join->on('users_data.recipe_id', '=', 'recipes.id')
+                         ->where('users_data.user_id', '=', Auth::user()->id);
+                })
+                ->where('name','=',$name)
+                ->paginate(24);
+        } else {
+            $recipes = DB::table('recipes')
+                ->where('name','=',$name)
+                ->paginate(24);
+        }
 
 		return view('index')
 		    ->with('base_url', $this->base_url)
@@ -59,15 +91,31 @@ class DefaultController extends Controller {
     }
 
     public function material($name) {
-        $recipes = DB::table('recipes')
-            ->where('m1_id','LIKE','%'.$name."%")
-            ->orWhere('m2_id','LIKE','%'.$name."%")
-            ->orWhere('m3_id','LIKE','%'.$name."%")
-            ->orWhere('m4_id','LIKE','%'.$name."%")
-            ->orWhere('m5_id','LIKE','%'.$name."%")
-            ->orWhere('m6_id','LIKE','%'.$name."%")
-            ->orderBy('name', 'asc')
-            ->paginate(24);
+        if(Auth::check()) {
+            $recipes = DB::table('recipes')
+                ->leftJoin('users_data', function ($join) {
+                    $join->on('users_data.recipe_id', '=', 'recipes.id')
+                         ->where('users_data.user_id', '=', Auth::user()->id);
+                })
+                ->where('m1_id','LIKE','%'.$name."%")
+                ->orWhere('m2_id','LIKE','%'.$name."%")
+                ->orWhere('m3_id','LIKE','%'.$name."%")
+                ->orWhere('m4_id','LIKE','%'.$name."%")
+                ->orWhere('m5_id','LIKE','%'.$name."%")
+                ->orWhere('m6_id','LIKE','%'.$name."%")
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        } else {
+            $recipes = DB::table('recipes')
+                ->where('m1_id','LIKE','%'.$name."%")
+                ->orWhere('m2_id','LIKE','%'.$name."%")
+                ->orWhere('m3_id','LIKE','%'.$name."%")
+                ->orWhere('m4_id','LIKE','%'.$name."%")
+                ->orWhere('m5_id','LIKE','%'.$name."%")
+                ->orWhere('m6_id','LIKE','%'.$name."%")
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        }
 
 		return view('index')
 		    ->with('base_url', $this->base_url)
@@ -78,10 +126,21 @@ class DefaultController extends Controller {
     }
 
     public function category($name) {
-        $recipes = DB::table('recipes')
-            ->where('category','=',$name)
-            ->orderBy('name', 'asc')
-            ->paginate(24);
+        if(Auth::check()) {
+            $recipes = DB::table('recipes')
+                ->leftJoin('users_data', function ($join) {
+                    $join->on('users_data.recipe_id', '=', 'recipes.id')
+                         ->where('users_data.user_id', '=', Auth::user()->id);
+                })
+                ->where('category','=',$name)
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        } else {
+            $recipes = DB::table('recipes')
+                ->where('category','=',$name)
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        }
 
 		return view('index')
 		    ->with('base_url', $this->base_url)
@@ -92,10 +151,21 @@ class DefaultController extends Controller {
     }
 
     public function size($name) {
-        $recipes = DB::table('recipes')
-            ->where('grid','=',$name)
-            ->orderBy('name', 'asc')
-            ->paginate(24);
+        if(Auth::check()) {
+            $recipes = DB::table('recipes')
+                ->leftJoin('users_data', function ($join) {
+                    $join->on('users_data.recipe_id', '=', 'recipes.id')
+                         ->where('users_data.user_id', '=', Auth::user()->id);
+                })
+                ->where('grid','=',$name)
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        } else {
+            $recipes = DB::table('recipes')
+                ->where('grid','=',$name)
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        }
 
 		return view('index')
 		    ->with('base_url', $this->base_url)
@@ -106,10 +176,21 @@ class DefaultController extends Controller {
     }
 
     public function tag($name) {
-        $recipes = DB::table('recipes')
-            ->where('tag','LIKE','%'.$name.'%')
-            ->orderBy('name', 'asc')
-            ->paginate(24);
+        if(Auth::check()) {
+            $recipes = DB::table('recipes')
+                ->leftJoin('users_data', function ($join) {
+                    $join->on('users_data.recipe_id', '=', 'recipes.id')
+                         ->where('users_data.user_id', '=', Auth::user()->id);
+                })
+                ->where('tag','LIKE','%'.$name.'%')
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        } else {
+            $recipes = DB::table('recipes')
+                ->where('tag','LIKE','%'.$name.'%')
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        }
 
 		return view('index')
 		    ->with('base_url', $this->base_url)
@@ -119,10 +200,21 @@ class DefaultController extends Controller {
     }
 
     public function source($name) {
-        $recipes = DB::table('recipes')
-            ->where('source','LIKE','%'.$name.'%')
-            ->orderBy('name', 'asc')
-            ->paginate(24);
+        if(Auth::check()) {
+            $recipes = DB::table('recipes')
+                ->leftJoin('users_data', function ($join) {
+                    $join->on('users_data.recipe_id', '=', 'recipes.id')
+                         ->where('users_data.user_id', '=', Auth::user()->id);
+                })
+                ->where('source','LIKE','%'.$name.'%')
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        } else {
+            $recipes = DB::table('recipes')
+                ->where('source','LIKE','%'.$name.'%')
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        }
 
 		return view('index')
 		    ->with('base_url', $this->base_url)
@@ -133,10 +225,21 @@ class DefaultController extends Controller {
     }
 
     public function customisable($name) {
-        $recipes = DB::table('recipes')
-            ->where('customisable','=',$name)
-            ->orderBy('name', 'asc')
-            ->paginate(24);
+        if(Auth::check()) {
+            $recipes = DB::table('recipes')
+                ->leftJoin('users_data', function ($join) {
+                    $join->on('users_data.recipe_id', '=', 'recipes.id')
+                         ->where('users_data.user_id', '=', Auth::user()->id);
+                })
+                ->where('customisable','=',$name)
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        } else {
+            $recipes = DB::table('recipes')
+                ->where('customisable','=',$name)
+                ->orderBy('name', 'asc')
+                ->paginate(24);
+        }
 
     	return view('index')
     	    ->with('base_url', $this->base_url)

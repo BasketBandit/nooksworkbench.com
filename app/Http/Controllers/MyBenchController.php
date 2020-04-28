@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Recipe;
-use Auth;
 
 class MyBenchController extends Controller {
     private $categories;
     private $tags;
     private $sources;
+    private $progress;
     private $base_url;
 
     public function __construct() {
@@ -39,6 +40,11 @@ class MyBenchController extends Controller {
             ->groupBy('sources')
             ->get();
 
+        $this->progress = DB::table('users_data')
+            ->join('recipes', 'recipes.id', '=', 'users_data.recipe_id')
+            ->where('users_data.user_id', '=', Auth::user()->id)
+            ->count();
+
         $this->base_url = "/mybench";
     }
 
@@ -52,6 +58,7 @@ class MyBenchController extends Controller {
 
         return view('mybench')
             ->with('base_url', $this->base_url)
+            ->with('progress', $this->progress)
             ->with('categories', $this->categories)
             ->with('tags', $this->tags)
             ->with('sources', $this->sources)
@@ -69,6 +76,7 @@ class MyBenchController extends Controller {
 
         return view('mybench')
             ->with('base_url', $this->base_url)
+            ->with('progress', $this->progress)
             ->with('categories', $this->categories)
             ->with('tags', $this->tags)
             ->with('sources', $this->sources)
@@ -86,6 +94,7 @@ class MyBenchController extends Controller {
 
         return view('mybench')
             ->with('base_url', $this->base_url)
+            ->with('progress', $this->progress)
             ->with('categories', $this->categories)
             ->with('tags', $this->tags)
             ->with('sources', $this->sources)
@@ -108,6 +117,7 @@ class MyBenchController extends Controller {
 
         return view('mybench')
             ->with('base_url', $this->base_url)
+            ->with('progress', $this->progress)
             ->with('categories', $this->categories)
             ->with('tags', $this->tags)
             ->with('sources', $this->sources)
@@ -125,6 +135,7 @@ class MyBenchController extends Controller {
 
         return view('mybench')
             ->with('base_url', $this->base_url)
+            ->with('progress', $this->progress)
             ->with('categories', $this->categories)
             ->with('tags', $this->tags)
             ->with('sources', $this->sources)
@@ -142,6 +153,7 @@ class MyBenchController extends Controller {
 
         return view('mybench')
             ->with('base_url', $this->base_url)
+            ->with('progress', $this->progress)
             ->with('categories', $this->categories)
             ->with('tags', $this->tags)
             ->with('sources', $this->sources)
@@ -159,6 +171,7 @@ class MyBenchController extends Controller {
 
         return view('mybench')
             ->with('base_url', $this->base_url)
+            ->with('progress', $this->progress)
             ->with('categories', $this->categories)
             ->with('tags', $this->tags)
             ->with('sources', $this->sources)
@@ -176,6 +189,7 @@ class MyBenchController extends Controller {
 
         return view('mybench')
             ->with('base_url', $this->base_url)
+            ->with('progress', $this->progress)
             ->with('categories', $this->categories)
             ->with('tags', $this->tags)
             ->with('sources', $this->sources)
@@ -193,6 +207,7 @@ class MyBenchController extends Controller {
 
         return view('mybench')
             ->with('base_url', $this->base_url)
+            ->with('progress', $this->progress)
             ->with('categories', $this->categories)
             ->with('tags', $this->tags)
             ->with('sources', $this->sources)

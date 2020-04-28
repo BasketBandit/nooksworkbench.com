@@ -30,13 +30,24 @@ Route::get('/img/i/grid/{filename}', function($filename) {
     return response(file_get_contents('./img/i/inventory/Leaf.png'))->header('Content-Type','image/png');
 });
 
+/*
+|--------------------------------------------------------------------------
+| Legal
+|--------------------------------------------------------------------------
+ */
+
 Route::get('/terms-of-service', function () {
     return view('tos');
 });
-
 Route::get('/privacy-policy', function () {
     return view('pp');
 });
+
+/*
+|--------------------------------------------------------------------------
+| MyBench GET
+|--------------------------------------------------------------------------
+ */
 
 Auth::routes();
 Route::get('/mybench', 'MyBenchController@index')->name('mybench');
@@ -48,3 +59,13 @@ Route::get('/mybench/size/{name}', 'MyBenchController@size');
 Route::get('/mybench/tag/{name}', 'MyBenchController@tag');
 Route::get('/mybench/source/{name}', 'MyBenchController@source');
 Route::get('/mybench/customisable/{name}', 'MyBenchController@customisable');
+
+/*
+|--------------------------------------------------------------------------
+| MyBench POST
+|--------------------------------------------------------------------------
+ */
+
+Route::post('/addrecipe/{id}','AjaxController@addrecipe');
+Route::post('/removerecipe/{id}','AjaxController@removerecipe');
+
