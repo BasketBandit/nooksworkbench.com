@@ -1,6 +1,8 @@
 @media only screen and (max-width: 600px) {
-    .card {
-        width: 98%;
+    .navbar {
+        padding-top: .5rem;
+        padding-right: 0px;
+        padding-left: 0px;
     }
 
     .card-img-wrap {
@@ -14,4 +16,19 @@
     .card-footer .row {
         flex-wrap: nowrap;
     }
+
+    .mat {
+        font-size: 100%;
+    }
+
+    .mat img {
+        max-width: 40px;
+        min-width: 40px;
+    }
+
+    .card {
+        margin-left: 0px!important;
+        margin-right: 0px!important;
+    }
+
 }

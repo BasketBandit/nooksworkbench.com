@@ -6,6 +6,11 @@ html {
 body {
     margin-bottom: 60px;
     background-color: #f0e8c0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h6 {
+    font-weight: 600;
 }
 
 .bg-pgreen {
@@ -62,6 +67,7 @@ body {
 .btn-sm {
     border: solid; !important;
     border-color: rgba(255,255,255,.03);
+    font-size: 85%;
 }
 
 a, a:hover, a:visited, a:link {
@@ -98,13 +104,16 @@ a, a:hover, a:visited, a:link {
 }
 
 .card-deck {
-    max-width: 100%;
     justify-content: center;
+    margin-left: -5px!important;
+    margin-right: -5px!important;
 }
 
 .card {
     padding-left: 0px!important;
     padding-right: 0px!important;
+    margin-left: 5px!important;
+    margin-right: 5px!important;
 }
 
 .card, .card-img-top, .mat {
@@ -120,13 +129,16 @@ a, a:hover, a:visited, a:link {
     color: black;
 }
 
+.mat {
+    font-size: 85%;
+}
+
 .mat img {
-    max-width: 40px;
-    min-width: 40px;
+    max-width: 30px;
+    min-width: 30px;
 }
 
 .mat-img {
-    max-width: 40px;
     display: inline-block;
 }
 

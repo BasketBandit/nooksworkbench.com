@@ -27,10 +27,24 @@ Route::get('/img/i/inventory/{filename}', function($filename) {
     return response(file_get_contents('./img/i/inventory/Leaf.png'))->header('Content-Type','image/png');
 });
 Route::get('/img/i/grid/{filename}', function($filename) {
-    return response(file_get_contents('./img/i/grid/na.png'))->header('Content-Type','image/png');
+    return response(file_get_contents('./img/i/inventory/Leaf.png'))->header('Content-Type','image/png');
 });
 
-/*Route::get('/recipes', 'DefaultController@recipes');
-Route::get('/recipes/{id}', 'DefaultController@recipe')->where('id', '[0-9]+');*/
+Route::get('/terms-of-service', function () {
+    return view('tos');
+});
 
+Route::get('/privacy-policy', function () {
+    return view('pp');
+});
 
+Auth::routes();
+Route::get('/mybench', 'MyBenchController@index')->name('mybench');
+Route::get('/mybench/browse/{name}', 'MyBenchController@browse');
+Route::get('/mybench/recipe/{name}','MyBenchController@recipe');
+Route::get('/mybench/material/{name}', 'MyBenchController@material');
+Route::get('/mybench/category/{name}', 'MyBenchController@category');
+Route::get('/mybench/size/{name}', 'MyBenchController@size');
+Route::get('/mybench/tag/{name}', 'MyBenchController@tag');
+Route::get('/mybench/source/{name}', 'MyBenchController@source');
+Route::get('/mybench/customisable/{name}', 'MyBenchController@customisable');
