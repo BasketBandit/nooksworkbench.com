@@ -37,7 +37,7 @@
         <h3>7. Modifications</h3>
         <p>nooksworkbench may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.</p>
         <h3>8. Governing Law</h3>
-        <p>These terms and conditions are governed by and construed in accordance with the laws of London and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
+        <p>These terms and conditions are governed by and construed in accordance with the laws of the United Kingdom and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
     </div>
     <div class="card-footer">
         <p><a href="https://getterms.io" title="Generate a free terms of use document">Terms of Service created with GetTerms.</a></p>
