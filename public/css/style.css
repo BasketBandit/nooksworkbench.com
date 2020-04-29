@@ -147,6 +147,13 @@ a, a:hover, a:visited, a:link {
     border-radius: 5px;
 }
 
+.secondary-nav {
+    position: relative;
+    padding: .5rem .5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
 #content {
     text-align: center;
 }
@@ -168,7 +175,7 @@ a, a:hover, a:visited, a:link {
     background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
-.card, .card-img-top, .mat, .badge, .btn-sm {
+.card, .card-img-top, .mat, .badge, .btn-sm, .secondary-nav {
     border-radius: 15px !important;
 }
 

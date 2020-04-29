@@ -10,7 +10,7 @@
     @endif
 
     @auth
-        <div class="alert alert-info border-0 bg-pgreen" role="alert">
+        <div class="secondary-nav bg-pgreen" role="alert">
             <button class="btn btn-nook" onclick="$('.fa-check-circle').closest('.card').toggle();">Toggle Unlocked</button>
         </div>
     @endauth

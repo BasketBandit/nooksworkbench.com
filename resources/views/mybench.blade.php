@@ -8,7 +8,7 @@
     </div>
     @endif
 
-    <div class="alert alert-info border-0 bg-pgreen" role="alert">
+    <div class="secondary-nav bg-pgreen" role="alert">
         <a href="/mybench/settings"><button class="btn btn-nook">Settings</button></a>
     </div>
 
