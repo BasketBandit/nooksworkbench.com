@@ -165,7 +165,7 @@
                             <source type="image/png" srcset="{{ secure_asset('/i/inventory/Bells.png') }}">
                             <img class="foot-img" src="secure_asset('/i/inventory/Bells.png')">
                         </picture>
-                        {{ $recipe->sell }}
+                        {{ number_format($recipe->sell) }}
                     </div>
                     @endif
                 </div>
