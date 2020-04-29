@@ -13,6 +13,38 @@ h6 {
     font-weight: 600;
 }
 
+.js-cookie-consent {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: white;
+    background-color: rgba(0,0,0, 0.75);
+    padding: 1rem;
+    text-align: center;
+}
+
+.js-cookie-consent-agree {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
 .bg-pgreen {
     background-color: #83d6aa
 }
@@ -82,8 +114,7 @@ h6 {
 }
 
 .btn-sm {
-    border: solid; !important;
-    border-color: rgba(255,255,255,.03);
+    border: solid rgba(255, 255, 255, .03) !important;;
     font-size: 85%;
 }
 
@@ -127,8 +158,8 @@ a, a:hover, a:visited, a:link {
 }
 
 .card {
-    padding-left: 0px!important;
-    padding-right: 0px!important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     margin-left: 5px!important;
     margin-right: 5px!important;
 }

@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Spatie\CookieConsent\CookieConsentServiceProvider::class,
 
         /*
          * Application Service Providers...

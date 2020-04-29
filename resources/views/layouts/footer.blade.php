@@ -12,6 +12,6 @@
 
 <div class="text-center py-3 bg-pgreen">
     <p>Nooksworkbench is a fan-made website and is in no way affiliated with Nintendo.</p>
-    <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a> <br>
+    <a href="/privacy-policy">Privacy Policy</a> | <a href="/cookie-policy">Cookie Policy</a> | <a href="/terms-of-service">Terms of Service</a> <br>
     Created by <a href="https://github.com/BasketBandit" target="_blank"><u>Joshua Hunt</u></a> | <a rel="noreferrer" href="https://docs.google.com/spreadsheets/d/13d_LAJPlxMa_DubPTuirkIV4DERBMXbrWQsmSh8ReK4" target="_blank">Data Source</a>
 </div>

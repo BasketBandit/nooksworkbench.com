@@ -43,10 +43,13 @@ Route::get('/i/grid/{filename}', function($filename) {
  */
 
 Route::get('/terms-of-service', function () {
-    return view('tos');
+    return view('legal/tos');
 });
 Route::get('/privacy-policy', function () {
-    return view('pp');
+    return view('legal/pp');
+});
+Route::get('/cookie-policy', function () {
+    return view('legal/cp');
 });
 
 /*
