@@ -15,7 +15,7 @@
 
     <div class="progress mt-4 mb-4">
         <div class="progress-bar" role="progressbar" style="width: {{ ($progress/595)*100 }}%;" aria-valuenow="{{ ($progress/595)*100 }}" aria-valuemin="0" aria-valuemax="100"></div>
-        <span class="progress-label">{{ $progress.'/595' }}</span>
+        <span class="progress-label">{{ $progress.'/595' }} ({{ number_format(($progress/595)*100, 2) }}%)</span>
     </div>
 
     @php $i = 1 @endphp
