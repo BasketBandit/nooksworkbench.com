@@ -19,14 +19,15 @@
                         <div class="card-img-wrap col-md-4 p-2">
                             @auth
                                 @if($recipe->unlocked)
-                                    <button class="ajaxSubmit fas fa-check-circle lead float-left position-absolute recipe-remove" style="color: green" data-id="{{ $recipe->id }}" data-endpoint="/removerecipe/"></button>
+                                    <button class="ajaxSubmit fas fa-check-circle lead float-left position-absolute recipe-remove" data-id="{{ $recipe->id }}" data-endpoint="/removerecipe/"></button>
                                 @else
-                                    <button class="ajaxSubmit fas fa-times-circle lead float-left position-absolute recipe-add" style="color: red" data-id="{{ $recipe->id }}" data-endpoint="/addrecipe/"></button>
+                                    <button class="ajaxSubmit fas fa-plus-circle lead float-left position-absolute recipe-add" data-id="{{ $recipe->id }}" data-endpoint="/addrecipe/"></button>
                                 @endif
                             @endauth
 
                             <a href="/recipe/{{ rawurlencode(strtolower($recipe->name)) }}">
                                 <picture>
+                                    <source type="image/png" srcset="https://acnhcdn.com/latest/DIYRecipeIcon/{{ $recipe->image }}.png">
                                     <source type="image/webp" srcset="https://cdn.nooksworkbench.com/crafting/{{ $recipe->image }}.webp">
                                     <img class="card-img-top m-1 p-2 rounded" src="https://cdn.nooksworkbench.com/crafting/{{ $recipe->image }}.png" alt="{{ $recipe->name }}">
                                 </picture>
@@ -186,18 +187,19 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 method: 'POST',
-                url: ($(this).data("endpoint") + $(this).data("id")),
-                dataType: "json",
-                contentType: "application/json",
-                data: {foo: "bar"},
+                url: ($(this).attr("data-endpoint") + $(this).attr("data-id")),
+                contentType: 'text/plain',
+                data: "https://nooksworkbench.com",
+                context: this,
                 success: function() {
-                    console.log("worked");
                     if($(this).hasClass("fa-check-circle")) {
-                        $(this).removeClass("fa-check-circle")
-                        $(this).addClass("fa-times-circle")
+                        $(this).removeClass("fa-check-circle");
+                        $(this).addClass("fa-plus-circle");
+                        $(this).attr('data-endpoint', "/addrecipe/");
                     } else {
-                        $(this).removeClass("fa-times-circle")
-                        $(this).addClass("fa-check-circle")
+                        $(this).removeClass("fa-plus-circle");
+                        $(this).addClass("fa-check-circle");
+                        $(this).attr('data-endpoint', "/removerecipe/");
                     }
                 },
             });

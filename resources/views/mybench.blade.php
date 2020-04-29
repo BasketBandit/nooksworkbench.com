@@ -14,7 +14,7 @@
 
 
     <div class="progress mt-4 mb-4">
-        <div class="progress-bar" role="progressbar" style="width: {{ (count($recipes)/595)*100 }}%;" aria-valuenow="{{ ($progress/595)*100 }}" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar" role="progressbar" style="width: {{ ($progress/595)*100 }}%;" aria-valuenow="{{ ($progress/595)*100 }}" aria-valuemin="0" aria-valuemax="100"></div>
         <span class="w-100 align-middle progress-label">{{ $progress.'/595' }}</span>
     </div>
 
@@ -28,6 +28,7 @@
                 <div class="card-img-wrap col-md-4 p-2">
                     <a href="/mybench/recipe/{{ rawurlencode(strtolower($recipe->name)) }}">
                         <picture>
+                            <source type="image/png" srcset="https://acnhcdn.com/latest/DIYRecipeIcon/{{ $recipe->image }}.png">
                             <source type="image/webp" srcset="https://cdn.nooksworkbench.com/crafting/{{ $recipe->image }}.webp">
                             <img class="card-img-top m-1 p-2 rounded" src="https://cdn.nooksworkbench.com/crafting/{{ $recipe->image }}.png" alt="{{ $recipe->name }}">
                         </picture>
@@ -46,8 +47,8 @@
                             <div class="mat rounded w-100 p-1 mb-1">
                                 <div class="mat-img">
                                     <picture>
-                                        <source type="image/webp" srcset="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m1_id).'.webp') }}">
-                                        <img src="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m1_id).'.png') }}" alt="{{ $recipe->m1_id }}">
+                                        <source type="image/webp" srcset="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m1_id).'.webp') }}">
+                                        <img src="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m1_id).'.png') }}" alt="{{ $recipe->m1_id }}">
                                     </picture>
                                 </div>
                                 <div class="mat-txt d-inline-block">{{ $recipe->m1_id }}</div>
@@ -60,8 +61,8 @@
                             <div class="mat rounded w-100 p-1 mb-1">
                                 <div class="mat-img">
                                     <picture>
-                                        <source type="image/webp" srcset="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m2_id).'.webp') }}">
-                                        <img src="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m2_id).'.png') }}" alt="{{ $recipe->m2_id }}">
+                                        <source type="image/webp" srcset="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m2_id).'.webp') }}">
+                                        <img src="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m2_id).'.png') }}" alt="{{ $recipe->m2_id }}">
                                     </picture>
                                 </div>
                                 <div class="mat-txt d-inline-block">{{ $recipe->m2_id }}</div>
@@ -74,8 +75,8 @@
                             <div class="mat rounded w-100 p-1 mb-1">
                                 <div class="mat-img">
                                     <picture>
-                                        <source type="image/webp" srcset="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m3_id).'.webp') }}">
-                                        <img src="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m3_id).'.png') }}" alt="{{ $recipe->m3_id }}">
+                                        <source type="image/webp" srcset="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m3_id).'.webp') }}">
+                                        <img src="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m3_id).'.png') }}" alt="{{ $recipe->m3_id }}">
                                     </picture>
                                 </div>
                                 <div class="mat-txt d-inline-block">{{ $recipe->m3_id }}</div>
@@ -88,8 +89,8 @@
                             <div class="mat rounded w-100 p-1 mb-1">
                                 <div class="mat-img">
                                     <picture>
-                                        <source type="image/webp" srcset="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m4_id).'.webp') }}">
-                                        <img src="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m4_id).'.png') }}" alt="{{ $recipe->m4_id }}">
+                                        <source type="image/webp" srcset="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m4_id).'.webp') }}">
+                                        <img src="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m4_id).'.png') }}" alt="{{ $recipe->m4_id }}">
                                     </picture>
                                 </div>
                                 <div class="mat-txt d-inline-block">{{ $recipe->m4_id }}</div>
@@ -102,8 +103,8 @@
                             <div class="mat rounded w-100 p-1 mb-1">
                                 <div class="mat-img">
                                     <picture>
-                                        <source type="image/webp" srcset="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m5_id).'.webp') }}">
-                                        <img src="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m5_id).'.png') }}" alt="{{ $recipe->m5_id }}">
+                                        <source type="image/webp" srcset="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m5_id).'.webp') }}">
+                                        <img src="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m5_id).'.png') }}" alt="{{ $recipe->m5_id }}">
                                     </picture>
                                 </div>
                                 <div class="mat-txt d-inline-block">{{ $recipe->m5_id }}</div>
@@ -116,8 +117,8 @@
                             <div class="mat rounded w-100 p-1 mb-1">
                                 <div class="mat-img">
                                     <picture>
-                                        <source type="image/webp" srcset="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m6_id).'.webp') }}">
-                                        <img src="{{ secure_asset('/img/i/inventory/'.rawurlencode($recipe->m6_id).'.png') }}" alt="{{ $recipe->m6_id }}">
+                                        <source type="image/webp" srcset="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m6_id).'.webp') }}">
+                                        <img src="{{ secure_asset('/i/inventory/'.rawurlencode($recipe->m6_id).'.png') }}" alt="{{ $recipe->m6_id }}">
                                     </picture>
                                 </div>
                                 <div class="mat-txt d-inline-block">{{ $recipe->m6_id }}</div>
@@ -153,16 +154,16 @@
                 <div class="row">
                     @if($recipe->grid)
                     <div class="col-sm text-left">
-                        <a href="/mybench/size/{{ strtolower($recipe->grid) }}"><img class="foot-img" src="{{ secure_asset('/img/i/grid/'.$recipe->grid.'.jpg') }}" alt="{{ $recipe->grid }}"/></a>
+                        <a href="/mybench/size/{{ strtolower($recipe->grid) }}"><img class="foot-img" src="{{ secure_asset('/i/grid/'.$recipe->grid.'.jpg') }}" alt="{{ $recipe->grid }}"/></a>
                     </div>
                     @endif
 
                     @if($recipe->sell > 0)
                     <div class="col-sm text-right">
                         <picture>
-                            <source type="image/webp" srcset="{{ secure_asset('/img/i/inventory/Bells.webp') }}">
-                            <source type="image/png" srcset="{{ secure_asset('/img/i/inventory/Bells.png') }}">
-                            <img class="foot-img" src="secure_asset('/img/i/inventory/Bells.png')">
+                            <source type="image/webp" srcset="{{ secure_asset('/i/inventory/Bells.webp') }}">
+                            <source type="image/png" srcset="{{ secure_asset('/i/inventory/Bells.png') }}">
+                            <img class="foot-img" src="secure_asset('/i/inventory/Bells.png')">
                         </picture>
                         {{ $recipe->sell }}
                     </div>

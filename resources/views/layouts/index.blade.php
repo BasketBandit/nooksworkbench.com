@@ -7,9 +7,17 @@
 
 <body>
     <nav class="navbar navbar-light bg-pgreen mb-2">
-        <div class="container">
-            <div class="input-group mt-2 ">
-                <a href="/"><div class="logo-btn mr-3"><img src="{{ secure_asset('/img/i/misc/tom.png') }}" alt="tom"/></div></a>
+        <div class="container mt-2 mb-2">
+            <div class="input-group">
+                <a href="/">
+                    <div class="logo-btn mr-3">
+                        <picture>
+                            <source type="image/webp" srcset="{{ secure_asset('/i/misc/tom.webp') }}">
+                            <img src="{{ secure_asset('/i/misc/tom.png') }}" alt="tom"/>
+                        </picture>
+                    </div>
+                </a>
+
                 <input id="search" type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="search-addon">
                 <div class="input-group-append">
                     <span class="input-group-text btn-info" id="search-addon"><i class="fas fa-search text-white" aria-hidden="true"></i></span>
@@ -23,7 +31,7 @@
                 <a href="/mybench">
                     <div class="btn btn-nook ml-3">MyBench</div>
                 </a>
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <a href="{{ route('logout') }}" onclick="e.preventDefault(); document.getElementById('logout-form').submit();">
                     <div class="btn btn-nook-secondary ml-1">
                         {{ __('Logout') }}
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
@@ -32,7 +40,7 @@
                 @endguest
             </div>
 
-            <div class="mt-3 mb-2 mr-2">
+            <div class="mt-2 mr-2">
                 <button id="item-search" class="btn btn-nook mb-1" type="submit" name="item">Search by Item</button>
                 <button id="material-search" class="btn btn-nook mb-1" type="submit" name="material">Search by Material</button>
                 <button id="tag-search" class="btn btn-nook mb-1" type="submit" name="tag">Search by Tag</button>
