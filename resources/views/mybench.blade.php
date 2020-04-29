@@ -4,18 +4,18 @@
 <div id="content">
     @if(count($recipes) == 0)
     <div class="alert alert-warning" role="alert">
-        It looks like you haven't unlocked any recipes yet {{ Auth::user()->username }}! ...{{ Auth::user()->username }}!
+        It looks like you haven't unlocked any recipes yet {{ Auth::user()->username }}! <small>...{{ Auth::user()->username }}!</small>
     </div>
     @endif
 
-    <div class="alert alert-info" role="alert">
-        <a href="/mybench/settings"><button class="btn btn-warning">Settings</button></a>
+    <div class="alert alert-info border-0 bg-pgreen" role="alert">
+        <a href="/mybench/settings"><button class="btn btn-nook">Settings</button></a>
     </div>
 
 
     <div class="progress mt-4 mb-4">
         <div class="progress-bar" role="progressbar" style="width: {{ ($progress/595)*100 }}%;" aria-valuenow="{{ ($progress/595)*100 }}" aria-valuemin="0" aria-valuemax="100"></div>
-        <span class="w-100 align-middle progress-label">{{ $progress.'/595' }}</span>
+        <span class="progress-label">{{ $progress.'/595' }}</span>
     </div>
 
     @php $i = 1 @endphp
