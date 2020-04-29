@@ -21,7 +21,7 @@
                 <a href="/mybench">
                     <div class="btn btn-nook ml-3">MyBench</div>
                 </a>
-                <a href="{{ route('logout') }}" onclick="e.preventDefault(); document.getElementById('logout-form').submit();">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <div class="btn btn-nook-secondary ml-1">
                         {{ __('Logout') }}
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
