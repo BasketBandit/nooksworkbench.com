@@ -29,29 +29,6 @@ Route::get('/tag/{name}', 'DefaultRecipeController@tag');
 Route::get('/source/{name}', 'DefaultRecipeController@source');
 Route::get('/customisable/{name}', 'DefaultRecipeController@customisable');
 
-Route::get('/i/inventory/{filename}', function($filename) {
-    return response(file_get_contents('./i/inventory/Leaf.png'))->header('Content-Type','image/png');
-});
-Route::get('/i/grid/{filename}', function($filename) {
-    return response(file_get_contents('./i/inventory/Leaf.png'))->header('Content-Type','image/png');
-});
-
-/*
-|--------------------------------------------------------------------------
-| Legal
-|--------------------------------------------------------------------------
- */
-
-Route::get('/terms-of-service', function () {
-    return view('legal/tos');
-});
-Route::get('/privacy-policy', function () {
-    return view('legal/pp');
-});
-Route::get('/cookie-policy', function () {
-    return view('legal/cp');
-});
-
 /*
 |--------------------------------------------------------------------------
 | MyBench Recipe
@@ -59,7 +36,7 @@ Route::get('/cookie-policy', function () {
  */
 
 Auth::routes();
-Route::get('/mybench', 'MyBenchRecipeController@index')->name('mybench');
+Route::get('/mybench', 'MyBenchRecipeController@index');
 Route::get('/mybench/browse/{name}', 'MyBenchRecipeController@browse');
 Route::get('/mybench/recipe/{name}','MyBenchRecipeController@recipe');
 Route::get('/mybench/material/{name}', 'MyBenchRecipeController@material');
@@ -83,4 +60,35 @@ Route::post('/addrecipe/{id}','MyBenchAccountController@addrecipe');
 Route::post('/removerecipe/{id}','MyBenchAccountController@removerecipe');
 
 Route::get('/mybench/settings/deleteAccount', 'MyBenchAccountController@deleteAccount')->name('deleteAccount');
+
+/*
+|--------------------------------------------------------------------------
+| Missing Content
+|--------------------------------------------------------------------------
+ */
+
+Route::get('/i/inventory/{filename}', function($filename) {
+    return response(file_get_contents('./i/inventory/Leaf.png'))->header('Content-Type','image/png');
+});
+Route::get('/i/grid/{filename}', function($filename) {
+    return response(file_get_contents('./i/inventory/Leaf.png'))->header('Content-Type','image/png');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Legal
+|--------------------------------------------------------------------------
+ */
+
+Route::get('/terms-of-service', function () {
+    return view('legal/tos');
+});
+Route::get('/privacy-policy', function () {
+    return view('legal/pp');
+});
+Route::get('/cookie-policy', function () {
+    return view('legal/cp');
+});
+
+
 

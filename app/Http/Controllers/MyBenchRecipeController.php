@@ -56,7 +56,7 @@ class MyBenchRecipeController extends Controller {
             ->orderBy('recipes.name', 'asc')
             ->paginate(24);
 
-        return view('mybench')
+        return view('index')
             ->with('base_url', $this->base_url)
             ->with('progress', $this->progress)
             ->with('categories', $this->categories)
@@ -74,7 +74,7 @@ class MyBenchRecipeController extends Controller {
             ->orderBy('name', 'asc')
             ->paginate(24);
 
-        return view('mybench')
+        return view('index')
             ->with('base_url', $this->base_url)
             ->with('progress', $this->progress)
             ->with('categories', $this->categories)
@@ -92,7 +92,7 @@ class MyBenchRecipeController extends Controller {
             ->orderBy('name', 'asc')
             ->paginate(24);
 
-        return view('mybench')
+        return view('index')
             ->with('base_url', $this->base_url)
             ->with('progress', $this->progress)
             ->with('categories', $this->categories)
@@ -115,7 +115,7 @@ class MyBenchRecipeController extends Controller {
             ->orderBy('name', 'asc')
             ->paginate(24);
 
-        return view('mybench')
+        return view('index')
             ->with('base_url', $this->base_url)
             ->with('progress', $this->progress)
             ->with('categories', $this->categories)
@@ -133,7 +133,7 @@ class MyBenchRecipeController extends Controller {
             ->orderBy('name', 'asc')
             ->paginate(24);
 
-        return view('mybench')
+        return view('index')
             ->with('base_url', $this->base_url)
             ->with('progress', $this->progress)
             ->with('categories', $this->categories)
@@ -151,7 +151,7 @@ class MyBenchRecipeController extends Controller {
             ->orderBy('name', 'asc')
             ->paginate(24);
 
-        return view('mybench')
+        return view('index')
             ->with('base_url', $this->base_url)
             ->with('progress', $this->progress)
             ->with('categories', $this->categories)
@@ -169,7 +169,7 @@ class MyBenchRecipeController extends Controller {
             ->orderBy('name', 'asc')
             ->paginate(24);
 
-        return view('mybench')
+        return view('index')
             ->with('base_url', $this->base_url)
             ->with('progress', $this->progress)
             ->with('categories', $this->categories)
@@ -187,7 +187,7 @@ class MyBenchRecipeController extends Controller {
             ->orderBy('name', 'asc')
             ->paginate(24);
 
-        return view('mybench')
+        return view('index')
             ->with('base_url', $this->base_url)
             ->with('progress', $this->progress)
             ->with('categories', $this->categories)
@@ -205,7 +205,7 @@ class MyBenchRecipeController extends Controller {
             ->orderBy('name', 'asc')
             ->paginate(24);
 
-        return view('mybench')
+        return view('index')
             ->with('base_url', $this->base_url)
             ->with('progress', $this->progress)
             ->with('categories', $this->categories)

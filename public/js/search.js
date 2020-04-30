@@ -1,23 +1,23 @@
 $("#search").on('keypress',function(e) {
     if(e.which === 13) {
-        window.location = "/browse/" + $("#search").val().toLowerCase();
+        window.location = "{{ $base_url }}/browse/" + $("#search").val().toLowerCase();
     }
 });
 
 $("#search-addon").click(function() {
-    window.location = "/browse/" + $("#search").val().toLowerCase();
+    window.location = "{{ $base_url }}/browse/" + $("#search").val().toLowerCase();
 });
 
 $("#item-search").click(function() {
-    window.location = "/browse/" + $("#search").val().toLowerCase();
+    window.location = "{{ $base_url }}/browse/" + $("#search").val().toLowerCase();
 });
 
 $("#material-search").click(function() {
-    window.location = "/material/" + $("#search").val().toLowerCase();
+    window.location = "{{ $base_url }}/material/" + $("#search").val().toLowerCase();
 });
 
 $("#tag-search").click(function() {
-    window.location = "/tag/" + $("#search").val().toLowerCase();
+    window.location = "{{ $base_url }}/tag/" + $("#search").val().toLowerCase();
 });
 
 $('#nav-category').click(function(){
