@@ -87,7 +87,7 @@
         @include('layouts.footer')
     </footer>
 
-    <script src="{{ url('/js/'.$base_url.'search.js') }}" type="text/javascript"></script>
+    <script src="{{ url('/js/search.js') }}" type="text/javascript"></script>
 </body>
 
 </html>
