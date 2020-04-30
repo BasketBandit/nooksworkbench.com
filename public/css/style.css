@@ -6,6 +6,7 @@ html {
 body {
     margin-bottom: 60px;
     background-color: #f0e8c0;
+    color: #333333;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -124,7 +125,7 @@ a, a:hover, a:visited, a:link {
 }
 
 .btn-nook {
-    color: #000000;
+    color: #333333;
     background-color: #f7cc64;
     border-radius: 10px;
 }
@@ -134,7 +135,7 @@ a, a:hover, a:visited, a:link {
 }
 
 .btn-nook-secondary {
-    color: #000000;
+    color: #333333;
     background-color: #f0e8c0;
     border-radius: 10px;
 }
@@ -185,7 +186,7 @@ a, a:hover, a:visited, a:link {
 
 .card a {
     text-decoration: none;
-    color: black;
+    color: #333333;
 }
 
 .ajaxSubmit, .ajaxSubmit:link, .ajaxSubmit:hover, .ajaxSubmit:focus, .ajaxSubmit:active, .ajaxSubmit:visited {

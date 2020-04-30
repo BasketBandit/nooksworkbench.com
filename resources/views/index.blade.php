@@ -118,7 +118,7 @@
                                 <picture>
                                     <source type="image/webp" srcset="{{ secure_asset('/i/inventory/Bells.webp') }}">
                                     <source type="image/png" srcset="{{ secure_asset('/i/inventory/Bells.png') }}">
-                                    <img class="foot-img" src="secure_asset('/i/inventory/Bells.png')">
+                                    <img class="foot-img" src="{{ secure_asset('/i/inventory/Bells.png') }}">
                                 </picture>
                                 {{ number_format($recipe->sell) }}
                             </div>

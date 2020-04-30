@@ -54,7 +54,7 @@ class MyBenchRecipeController extends Controller {
             ->join('recipes', 'recipes.id', '=', 'users_data.recipe_id')
             ->where('users_data.user_id', '=', Auth::user()->id)
             ->orderBy('recipes.name', 'asc')
-            ->paginate(24);
+            ->paginate(24)->onEachSide(1);
 
         return view('index')
             ->with('base_url', $this->base_url)
@@ -72,7 +72,7 @@ class MyBenchRecipeController extends Controller {
             ->where('users_data.user_id', '=', Auth::user()->id)
             ->where('name','LIKE','%'.$name."%")
             ->orderBy('name', 'asc')
-            ->paginate(24);
+            ->paginate(24)->onEachSide(1);
 
         return view('index')
             ->with('base_url', $this->base_url)
@@ -90,7 +90,7 @@ class MyBenchRecipeController extends Controller {
             ->where('users_data.user_id', '=', Auth::user()->id)
             ->where('name','=',$name)
             ->orderBy('name', 'asc')
-            ->paginate(24);
+            ->paginate(24)->onEachSide(1);
 
         return view('index')
             ->with('base_url', $this->base_url)
@@ -113,7 +113,7 @@ class MyBenchRecipeController extends Controller {
             ->orWhere('m5_id','LIKE','%'.$name."%")
             ->orWhere('m6_id','LIKE','%'.$name."%")
             ->orderBy('name', 'asc')
-            ->paginate(24);
+            ->paginate(24)->onEachSide(1);
 
         return view('index')
             ->with('base_url', $this->base_url)
@@ -131,7 +131,7 @@ class MyBenchRecipeController extends Controller {
             ->where('users_data.user_id', '=', Auth::user()->id)
             ->where('category','=',$name)
             ->orderBy('name', 'asc')
-            ->paginate(24);
+            ->paginate(24)->onEachSide(1);
 
         return view('index')
             ->with('base_url', $this->base_url)
@@ -149,7 +149,7 @@ class MyBenchRecipeController extends Controller {
             ->where('users_data.user_id', '=', Auth::user()->id)
             ->where('grid','=',$name)
             ->orderBy('name', 'asc')
-            ->paginate(24);
+            ->paginate(24)->onEachSide(1);
 
         return view('index')
             ->with('base_url', $this->base_url)
@@ -167,7 +167,7 @@ class MyBenchRecipeController extends Controller {
             ->where('users_data.user_id', '=', Auth::user()->id)
             ->where('tag','LIKE','%'.$name.'%')
             ->orderBy('name', 'asc')
-            ->paginate(24);
+            ->paginate(24)->onEachSide(1);
 
         return view('index')
             ->with('base_url', $this->base_url)
@@ -185,7 +185,7 @@ class MyBenchRecipeController extends Controller {
             ->where('users_data.user_id', '=', Auth::user()->id)
             ->where('source','LIKE','%'.$name.'%')
             ->orderBy('name', 'asc')
-            ->paginate(24);
+            ->paginate(24)->onEachSide(1);
 
         return view('index')
             ->with('base_url', $this->base_url)
@@ -203,7 +203,7 @@ class MyBenchRecipeController extends Controller {
             ->where('users_data.user_id', '=', Auth::user()->id)
             ->where('customisable','=',$name)
             ->orderBy('name', 'asc')
-            ->paginate(24);
+            ->paginate(24)->onEachSide(1);
 
         return view('index')
             ->with('base_url', $this->base_url)

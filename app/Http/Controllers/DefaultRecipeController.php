@@ -28,11 +28,11 @@ class DefaultRecipeController extends Controller {
                 })
                 ->select('*', 'recipes.id')
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
 		} else {
             $recipes = DB::table('recipes')
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
 		}
 
 		return view('index')
@@ -53,12 +53,12 @@ class DefaultRecipeController extends Controller {
                 ->select('*', 'recipes.id')
                 ->where('name','LIKE','%'.$name."%")
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
 		} else {
             $recipes = DB::table('recipes')
                 ->where('name','LIKE','%'.$name."%")
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
 		}
 
 		return view('index')
@@ -78,11 +78,11 @@ class DefaultRecipeController extends Controller {
                 })
                 ->select('*', 'recipes.id')
                 ->where('name','=',$name)
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         } else {
             $recipes = DB::table('recipes')
                 ->where('name','=',$name)
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         }
 
 		return view('index')
@@ -108,7 +108,7 @@ class DefaultRecipeController extends Controller {
                 ->orWhere('m5_id','LIKE','%'.$name."%")
                 ->orWhere('m6_id','LIKE','%'.$name."%")
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         } else {
             $recipes = DB::table('recipes')
                 ->where('m1_id','LIKE','%'.$name."%")
@@ -118,7 +118,7 @@ class DefaultRecipeController extends Controller {
                 ->orWhere('m5_id','LIKE','%'.$name."%")
                 ->orWhere('m6_id','LIKE','%'.$name."%")
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         }
 
 		return view('index')
@@ -139,12 +139,12 @@ class DefaultRecipeController extends Controller {
                 ->select('*', 'recipes.id')
                 ->where('category','=',$name)
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         } else {
             $recipes = DB::table('recipes')
                 ->where('category','=',$name)
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         }
 
 		return view('index')
@@ -165,12 +165,12 @@ class DefaultRecipeController extends Controller {
                 ->select('*', 'recipes.id')
                 ->where('grid','=',$name)
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         } else {
             $recipes = DB::table('recipes')
                 ->where('grid','=',$name)
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         }
 
 		return view('index')
@@ -191,12 +191,12 @@ class DefaultRecipeController extends Controller {
                 ->select('*', 'recipes.id')
                 ->where('tag','LIKE','%'.$name.'%')
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         } else {
             $recipes = DB::table('recipes')
                 ->where('tag','LIKE','%'.$name.'%')
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         }
 
 		return view('index')
@@ -216,12 +216,12 @@ class DefaultRecipeController extends Controller {
                 ->select('*', 'recipes.id')
                 ->where('source','LIKE','%'.$name.'%')
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         } else {
             $recipes = DB::table('recipes')
                 ->where('source','LIKE','%'.$name.'%')
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         }
 
 		return view('index')
@@ -242,12 +242,12 @@ class DefaultRecipeController extends Controller {
                 ->select('*', 'recipes.id')
                 ->where('customisable','=',$name)
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         } else {
             $recipes = DB::table('recipes')
                 ->where('customisable','=',$name)
                 ->orderBy('name', 'asc')
-                ->paginate(24);
+                ->paginate(24)->onEachSide(1);
         }
 
     	return view('index')

@@ -1,8 +1,16 @@
 ul.pagination {
-    display: inline-flex!important;
+    display: flex!important;
+    justify-content: center;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #333333;
+    background-color: #f7cc64;
+    border-color: #f6c858;
 }
 
 ul.pagination li a {
-    color:#007bff;
+    color:#333333;
 }
 
