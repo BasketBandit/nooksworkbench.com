@@ -158,6 +158,10 @@ a, a:hover, a:visited, a:link {
     text-align: center;
 }
 
+.col-md-6 {
+    max-width: 550px;
+}
+
 .card-deck {
     justify-content: center;
     margin-left: -5px!important;
@@ -203,12 +207,13 @@ a, a:hover, a:visited, a:link {
 }
 
 .mat {
-    font-size: 85%;
+    font-size: 100%;
+    margin-right: .25rem!important;
 }
 
 .mat img {
-    max-width: 30px;
-    min-width: 30px;
+    max-width: 40px;
+    min-width: 40px;
 }
 
 .mat-img {

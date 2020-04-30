@@ -15,12 +15,9 @@
         </div>
     @endauth
 
-    @php $i = 1 @endphp
-    @foreach($recipes as $recipe)
-        @if($i == 1)
-            <div class="card-deck mb-2">
-        @endif
-            <div class="card col-md-4 text-left">
+    <div class="row justify-content-center">
+        @foreach($recipes as $recipe)
+            <div class="card col-md-6 text-left mb-2">
                 <div class="row no-gutters h-100">
                     <div class="card-img-wrap col-md-4 p-2">
                         @auth
@@ -141,48 +138,43 @@
                     </div>
 
                     @if($recipe->tag)
-                    <div class="text-center mr-1">
-                        <a href="/tag/{{ strtolower($recipe->tag) }}"><button class="btn-sm btn-light mt-1 mb-1 text-center text-muted">{{ $recipe->tag }}</button></a>
-                    </div>
+                        <div class="text-center mr-1">
+                            <a href="/tag/{{ strtolower($recipe->tag) }}"><button class="btn-sm btn-light mt-1 mb-1 text-center text-muted">{{ $recipe->tag }}</button></a>
+                        </div>
                     @endif
 
                     @if($recipe->source)
-                    <div class="text-center mr-1">
-                        @foreach(explode(', ', $recipe->source) as $source)
-                            <a href="/source/{{ strtolower($source) }}"><button class="btn-sm btn-light mt-1 mb-1 text-center text-muted">{{ $source }}</button></a>
-                        @endforeach
-                    </div>
+                        <div class="text-center mr-1">
+                            @foreach(explode(', ', $recipe->source) as $source)
+                                <a href="/source/{{ strtolower($source) }}"><button class="btn-sm btn-light mt-1 mb-1 text-center text-muted">{{ $source }}</button></a>
+                            @endforeach
+                        </div>
                     @endif
                 </div>
 
-              <div class="card-footer text-muted">
-                  <div class="row">
-                      @if($recipe->grid)
-                          <div class="col-sm text-left">
-                              <a href="/size/{{ strtolower($recipe->grid) }}"><img class="foot-img" src="{{ secure_asset('/i/grid/'.$recipe->grid.'.jpg') }}" alt="{{ $recipe->grid }}"/></a>
-                          </div>
-                      @endif
+                <div class="card-footer text-muted">
+                    <div class="row">
+                        @if($recipe->grid)
+                            <div class="col-sm text-left">
+                                <a href="/size/{{ strtolower($recipe->grid) }}"><img class="foot-img" src="{{ secure_asset('/i/grid/'.$recipe->grid.'.jpg') }}" alt="{{ $recipe->grid }}"/></a>
+                            </div>
+                        @endif
 
-                      @if($recipe->sell > 0)
-                          <div class="col-sm text-right">
-                              <picture>
-                                  <source type="image/webp" srcset="{{ secure_asset('/i/inventory/Bells.webp') }}">
-                                  <source type="image/png" srcset="{{ secure_asset('/i/inventory/Bells.png') }}">
-                                  <img class="foot-img" src="secure_asset('/i/inventory/Bells.png')">
-                              </picture>
-                              {{ number_format($recipe->sell) }}
-                          </div>
-                      @endif
-                  </div>
-              </div>
-
+                        @if($recipe->sell > 0)
+                            <div class="col-sm text-right">
+                                <picture>
+                                    <source type="image/webp" srcset="{{ secure_asset('/i/inventory/Bells.webp') }}">
+                                    <source type="image/png" srcset="{{ secure_asset('/i/inventory/Bells.png') }}">
+                                    <img class="foot-img" src="secure_asset('/i/inventory/Bells.png')">
+                                </picture>
+                                {{ number_format($recipe->sell) }}
+                            </div>
+                        @endif
+                    </div>
+                </div>
             </div>
-        @php $i++ @endphp
-        @if($i == 4)
-        </div>
-        @php $i = 1; @endphp
-        @endif
-    @endforeach
+        @endforeach
+    </div>
 
     @auth
         <script>
