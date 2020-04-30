@@ -106,12 +106,14 @@ class MyBenchRecipeController extends Controller {
         $recipes = DB::table('users_data')
             ->join('recipes', 'recipes.id', '=', 'users_data.recipe_id')
             ->where('users_data.user_id', '=', Auth::user()->id)
-            ->where('m1_id','LIKE','%'.$name."%")
-            ->orWhere('m2_id','LIKE','%'.$name."%")
-            ->orWhere('m3_id','LIKE','%'.$name."%")
-            ->orWhere('m4_id','LIKE','%'.$name."%")
-            ->orWhere('m5_id','LIKE','%'.$name."%")
-            ->orWhere('m6_id','LIKE','%'.$name."%")
+            ->where(function($query) use ($name) {
+                $query->where('m1_id','LIKE','%'.$name."%")
+                    ->orWhere('m2_id','LIKE','%'.$name."%")
+                    ->orWhere('m3_id','LIKE','%'.$name."%")
+                    ->orWhere('m4_id','LIKE','%'.$name."%")
+                    ->orWhere('m5_id','LIKE','%'.$name."%")
+                    ->orWhere('m6_id','LIKE','%'.$name."%");
+            })
             ->orderBy('name', 'asc')
             ->paginate(24)->onEachSide(1);
 
