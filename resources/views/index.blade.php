@@ -4,6 +4,10 @@
 
 @section('content')
     @if($base_url !== "/mybench")
+        <div class="alert alert-info" role="alert">
+            If you have any feedback, problems, or just want to hang out please join our Discord server! <u><a rel="noreferrer" href="https://discord.gg/4Tx6G3p">discord.gg/4Tx6G3p</a></u>
+        </div>
+
         @if(count($recipes) == 0)
             <div class="alert alert-warning" role="alert">
                 Sorry! Whatever you're trying to find doesn't exist here! <small>...exist here!</small>
@@ -26,13 +30,13 @@
             <a href="/mybench/settings"><button class="btn btn-nook">Settings</button></a>
         </div>
 
-        <div class="progress mt-4 mb-4">
+        <div class="progress m-2">
             <div class="progress-bar" role="progressbar" style="width: {{ ($progress/595)*100 }}%;" aria-valuenow="{{ ($progress/595)*100 }}" aria-valuemin="0" aria-valuemax="100"></div>
             <span class="progress-label">{{ $progress.'/595' }} ({{ number_format(($progress/595)*100, 2) }}%)</span>
         </div>
     @endif
 
-    <div class="row justify-content-center">
+    <div class="row recipes justify-content-center">
         @foreach($recipes as $recipe)
             <div class="card col-md-6 text-left m-1">
                 <div class="row no-gutters h-100">

@@ -74,6 +74,10 @@ h6 {
     margin-bottom: 2px;
 }
 
+.alert {
+    margin-bottom: .5rem !important;
+}
+
 .progress {
     position: relative;
     height: 32px;
