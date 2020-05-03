@@ -56,10 +56,11 @@ Route::get('/mybench/settings', function () {
 |--------------------------------------------------------------------------
  */
 
-Route::post('/addrecipe/{id}','MyBenchAccountController@addrecipe');
-Route::post('/removerecipe/{id}','MyBenchAccountController@removerecipe');
+Route::post('/addrecipe/{id}','MyBenchAccountController@addRecipe');
+Route::post('/removerecipe/{id}','MyBenchAccountController@removeRecipe');
+Route::post('/hideunlocked/{val}', 'MyBenchAccountController@hideUnlocked');
 
-Route::get('/mybench/settings/deleteAccount', 'MyBenchAccountController@deleteAccount')->name('deleteAccount');
+Route::get('/mybench/settings/deleteaccount', 'MyBenchAccountController@deleteAccount')->name('deleteAccount');
 
 /*
 |--------------------------------------------------------------------------

@@ -16,7 +16,10 @@
 
         @auth
             <div class="secondary-nav mb-1 bg-pgreen" role="alert">
-                <button class="btn btn-nook" onclick="$('.fa-check-circle').closest('.card').toggle();">Toggle Unlocked</button>
+                <form action="/hideunlocked/{{ (Auth::user()->unlocked_hidden > 0) ? 0 : 1 }}" method="post">
+                    @csrf
+                    <button class="btn btn-nook" type="submit">{{ (Auth::user()->unlocked_hidden > 0) ? 'Show' : 'Hide' }} Unlocked</button>
+                </form>
             </div>
         @endauth
     @else
