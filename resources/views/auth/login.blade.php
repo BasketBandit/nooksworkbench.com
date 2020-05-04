@@ -56,6 +56,12 @@
                                 @endif -->
                             </div>
                         </div>
+
+                        <div class="w-100 text-center mt-4" >
+                            <a href="{{ url('login/google') }}">
+                                <img src="/i/social/btn_google_signin_light_normal_web@2x.png" style="max-height: 46px" alt="google_signin"/>
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>

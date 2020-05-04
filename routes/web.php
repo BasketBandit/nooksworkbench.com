@@ -60,6 +60,13 @@ Route::post('/addrecipe/{id}','MyBenchAccountController@addRecipe');
 Route::post('/removerecipe/{id}','MyBenchAccountController@removeRecipe');
 Route::post('/hideunlocked/{val}', 'MyBenchAccountController@hideUnlocked');
 
+Route::get('login/github', 'Auth\LoginController@redirectToGithub');
+Route::get('login/github/callback', 'Auth\LoginController@handleGithubCallback');
+Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+Route::get('login/twitter', 'Auth\LoginController@redirectToTwitter');
+Route::get('login/twitter/callback', 'Auth\LoginController@handleTwitterCallback');
+
 Route::get('/mybench/settings/deleteaccount', 'MyBenchAccountController@deleteAccount')->name('deleteAccount');
 
 /*

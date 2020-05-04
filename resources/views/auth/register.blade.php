@@ -3,7 +3,8 @@
 @section('content')
 <div class="container">
     <div class="alert alert-warning text-center" role="alert">
-        Please keep your password safe! There is no way to recover your account if you lose it!
+        Please keep your password safe! There is no way to recover your account if you lose it! <br>
+        Alternatively, try logging in with Google - this is recoverable through them!
     </div>
 
     <div class="row justify-content-center">
