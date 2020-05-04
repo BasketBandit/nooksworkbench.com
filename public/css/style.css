@@ -194,7 +194,7 @@ a, a:hover, a:visited, a:link {
 }
 
 .ajaxSubmit, .ajaxSubmit:link, .ajaxSubmit:hover, .ajaxSubmit:focus, .ajaxSubmit:active, .ajaxSubmit:visited {
-    font-size: 150%;
+    font-size: 200%;
     padding: 0;
     margin: 0;
     border: none;
